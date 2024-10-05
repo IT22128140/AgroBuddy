@@ -13,25 +13,24 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            //logo
-            DrawerHeader(
-              child: Image.asset(
-                'lib/images/logo.png',
-              ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          //logo
+          DrawerHeader(
+            child: Image.asset(
+              'lib/resources/images/logo.png',
             ),
-
-            //logout button
-            Padding(
-              padding: const EdgeInsets.only(left:75.0, bottom:25),
+          ),
+          //logout button
+          Padding(
+              padding: const EdgeInsets.only(left: 75.0, bottom: 25),
               child: ListTile(
                 leading: const Icon(
                   Icons.logout,
                   color: Colors.black,
                 ),
-                title:Text(
+                title: Text(
                   AppLocalizations.of(context)!.logout_btn,
                   style: const TextStyle(
                     fontSize: 20,
@@ -41,14 +40,13 @@ class MyDrawer extends StatelessWidget {
                 onTap: () {
                   //pop drawer
                   Navigator.pop(context);
-                  
+
                   //logout
                   logout();
                 },
-              )
-            ),
-          ],
-        ),
+              )),
+        ],
+      ),
     );
   }
 }

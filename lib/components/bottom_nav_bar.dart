@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:agro_buddy/pages/animal/animal_page.dart';
-import 'package:agro_buddy/pages/forecast/forecast.dart';
+import 'package:agro_buddy/pages/forecast/forecast_page.dart';
 import 'package:agro_buddy/pages/records/records.dart';
 import 'package:agro_buddy/pages/stock/stock.dart';
 
@@ -16,7 +16,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
   final List<Widget> screens = const [
     RecordsScreen(),
-    ForecastScreen(),
+    ForecastPage(),
     StockScreen(),
     AnimalPage(),
   ];

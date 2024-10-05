@@ -274,5 +274,131 @@
     "description": "ඔබට මෙම ක්‍රියාව පසුගමනය කළ නොහැක",
     "type": "text",
     "placeholders": {}
+  },
+  "login_name": "ආයුබෝවන් පුරන්න",
+  "@login_name": {
+      "description": "පුරන්න මාතෘකාව",
+      "type": "text",
+      "placeholders": {}
+  },
+  "email_input": "විද්‍යුත් තැපෑල",
+  "@email_input": {
+      "description": "විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "pw_input": "මුරපදය",
+  "@pw_input": {
+      "description": "මුරපදය ඇතුලත් කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "forgotpw_input": "මුරපදය අමතක ද?",
+  "@forgotpw_input": {
+      "description": "මුරපදය අමතක ද?",
+      "type": "text",
+      "placeholders": {}
+  },
+  "signin_btn": "පුරන්න",
+  "@signin_btn": {
+      "description": "පුරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "no_acc": "මා හට ගිණුමක් නැත?",
+  "@no_acc": {
+      "description": "මා හට ගිණුමක් නැත?",
+      "type": "text",
+      "placeholders": {}
+  },
+  "signup_btn": "ලියාපදිංචි වන්න",
+  "@signup_btn": {
+      "description": "ලියාපදිංචි වන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "pw_mismatch": "මුරපද එකිනෙකට නොගැලපේ!",
+  "@pw_mismatch": {
+      "description": "මුරපද එකිනෙකට නොගැලපේ",
+      "type": "text",
+      "placeholders": {}
+  },
+  "signup_text": "ඔබේ ගිණුම නිර්මාණය කරන්න",
+  "@signup_text": {
+      "description": "ඔබේ ගිණුම නිර්මාණය කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "username_input": "පරිශීලක නාමය",
+  "@username_input": {
+      "description": "පරිශීලක නාමය ඇතුලත් කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "conpw_input": "මුරපදය තහවුරු කරන්න",
+  "@conpw_input": {
+      "description": "මුරපදය තහවුරු කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "yes_acc": "දැනටමත් ගිණුමක් ඇත?",
+  "@yes_acc": {
+      "description": "දැනටමත් ගිණුමක් ඇත?",
+      "type": "text",
+      "placeholders": {}
+  },
+  "harvest_imp": "වැදගත්",
+  "@harvest_imp": {
+      "description": "වැදගත්",
+      "type": "text",
+      "placeholders": {}
+  },
+  "harvest_imp_text": "තාක්ෂණික, ජීව විද්‍යාත්මක සහ පාරිසරික සාධක හේතුවෙන් පුරෝකථනය කරන ලද අස්වැන්න වෙනස් විය හැක.",
+  "@harvest_imp_text": {
+      "description": "වැදගත් පාඨය",
+      "type": "text",
+      "placeholders": {}
+  },
+  "st_yield": "සම්මත අස්වැන්න (අක්කරයට කිලෝ ග්‍රෑම්)",
+  "@st_yield": {
+      "description": "සම්මත අස්වැන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "cult_area": "වගා බිම් ප්‍රමාණය (අක්කර)",
+  "@cult_area": {
+      "description": "වගා බිම් ප්‍රමාණය",
+      "type": "text",
+      "placeholders": {}
+  },
+  "last_yield": "පසුගිය සමයේ අස්වැන්න (අක්කරයට කිලෝ ග්‍රෑම්)",
+  "@last_yield": {
+      "description": "පසුගිය සමයේ අස්වැන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "cast_harv": "පුරෝකථනය කරන ලද අස්වැන්න",
+  "@cast_harv": {
+      "description": "පුරෝකථනය කරන ලද අස්වැන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "amount_kg": "කිලෝ ග්‍රෑම්",
+  "@amount_kg": {
+      "description": "ප්‍රමාණය",
+      "type": "text",
+      "placeholders": {}
+  },
+  "calc_btn": "ගණනය කරන්න",
+  "@calc_btn": {
+      "description": "ගණනය කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "logout_btn": "පිටවීම",
+  "@logout_btn": {
+      "description": "පිටවීම",
+      "type": "text",
+      "placeholders": {}
   }
 }
