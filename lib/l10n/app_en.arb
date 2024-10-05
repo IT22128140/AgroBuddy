@@ -89,7 +89,6 @@
     "type": "text",
     "placeholders": {}
   },
-  
   "cow": "Cow",
   "@cow": {
     "description": "Cow",
@@ -273,6 +272,132 @@
   "delete_confirmation": "You cannot undo this action",
   "@delete_confirmation": {
     "description": "You cannot undo this action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "login_name": "Hello Sign In!",
+  "@login_name": {
+    "description": "Sign In Text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "email_input": "Email",
+  "@email_input": {
+    "description": "Enter Email",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pw_input": "Password",
+  "@pw_input": {
+    "description": "Enter Password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgotpw_input": "Forgot Password?",
+  "@forgotpw_input": {
+    "description": "Forgot Password?",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signin_btn": "SIGN IN",
+  "@signin_btn": {
+    "description": "Sign In",
+    "type": "text",
+    "placeholders": {}
+  },
+  "no_acc": "Don’t have an Account?",
+  "@no_acc": {
+    "description": "Don’t have an Account?",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signup_btn": "SIGN UP",
+  "@signup_btn": {
+    "description": "Sign Up",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pw_mismatch": "Password doesn’t match!",
+  "@pw_mismatch": {
+    "description": " Password doesn’t match!",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signup_text": "Create Your Account",
+  "@signup_text": {
+    "description": "Create Your Account",
+    "type": "text",
+    "placeholders": {}
+  },
+  "username_input": "User Name",
+  "@username_input": {
+    "description": "Enter UserName",
+    "type": "text",
+    "placeholders": {}
+  },
+  "conpw_input": "Confirm Password",
+  "@conpw_input": {
+    "description": "Enter Confirm Password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "yes_acc": "Already have an Account?",
+  "@yes_acc": {
+    "description": "Already have an Account?",
+    "type": "text",
+    "placeholders": {}
+  },
+  "harvest_imp": "Important",
+  "@harvest_imp": {
+    "description": "Important",
+    "type": "text",
+    "placeholders": {}
+  },
+  "harvest_imp_text": "The forecast yield may vary due to technological, biological and environmental factors.",
+  "@harvest_imp_text": {
+    "description": "Harvest Important Text",
+    "type": "text",
+    "placeholders": {}
+  },
+  "st_yield": "Standard Yield (kg per ac)",
+  "@st_yield": {
+    "description": "Standard Yield",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cult_area": "Cultivated Land Extent (ac)",
+  "@cult_area": {
+    "description": "Cultivated Area",
+    "type": "text",
+    "placeholders": {}
+  },
+  "last_yield": "Last Time Yield (kg per ac)",
+  "@last_yield": {
+    "description": "Last Time Yield",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cast_harv": "Forecasted Harvest",
+  "@cast_harv": {
+    "description": "Forecasted Harvest",
+    "type": "text",
+    "placeholders": {}
+  },
+  "amount_kg": "kg",
+  "@amount_kg": {
+    "description": "Amount",
+    "type": "text",
+    "placeholders": {}
+  },
+  "calc_btn": "Calculate",
+  "@calc_btn": {
+    "description": "Calculate",
+    "type": "text",
+    "placeholders": {}
+  },
+  "logout_btn": "Logout",
+  "@logout_btn": {
+    "description": "Logout",
     "type": "text",
     "placeholders": {}
   }

@@ -42,4 +42,4 @@ flutter:
         - asset: lib/fonts/JotiOne-Regular.ttf
 
   assets:
-    - lib\resources\images\animal.jpg
+    - lib\resources\images\logo.png
