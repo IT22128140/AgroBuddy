@@ -1,21 +1,21 @@
 import "package:agro_buddy/components/my_drawer.dart";
-import "package:agro_buddy/components/uppur_appbar.dart";
+import "package:agro_buddy/components/upper_appbar.dart";
 import "package:agro_buddy/pages/forecast/harvest_forecast.dart";
 import "package:flutter/material.dart";
 
 class ForecastPage extends StatelessWidget {
-  const ForecastPage({Key? key}):super(key:key);
+  const ForecastPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey <NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+    final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
     return Scaffold(
-      appBar: const UppurAppBar(),
+      appBar: const UpperAppBar(),
       backgroundColor: Color.fromARGB(255, 40, 99, 31),
       drawer: MyDrawer(),
       body: WillPopScope(
-        onWillPop: ()async {
-          if(navigatorKey.currentState?.canPop()?? false) {
+        onWillPop: () async {
+          if (navigatorKey.currentState?.canPop() ?? false) {
             navigatorKey.currentState?.pop();
             return false;
           }
@@ -23,7 +23,7 @@ class ForecastPage extends StatelessWidget {
         },
         child: Navigator(
           key: navigatorKey,
-          onGenerateRoute: (settings){
+          onGenerateRoute: (settings) {
             Widget page = const HarvestForecast();
             // switch (settings.name) {
             //   case 'show_charts':
