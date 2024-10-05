@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:agro_buddy/models/animal.dart';
 
 class DatabaseService {
-  
   //create a animal profile
   final CollectionReference animalCollection =
       FirebaseFirestore.instance.collection('animals');
@@ -13,14 +12,19 @@ class DatabaseService {
   }
 
   //get all animal profiles stream
-  Stream<QuerySnapshot> getanimalsStream() {
-    return animalCollection.snapshots();
+  Stream<QuerySnapshot> getanimalsStream(String uid) {
+    return animalCollection.where('uid', isEqualTo: uid).snapshots();
   }
 
   //get animal profile data
-  Future<Animal> getAnimalData(String id) async {
+  Future<Animal> getAnimalData(String id, String uid) async {
     DocumentSnapshot snapshot = await animalCollection.doc(id).get();
-    return Animal.fromSnapshot(snapshot);
+    if (snapshot.exists && snapshot.get('uid') == uid) {
+      return Animal.fromSnapshot(snapshot);
+    } else {
+      throw Exception('Animal not found or UID does not match');
+    }
+    // return Animal.fromSnapshot(snapshot);
   }
 
   //update animal profile

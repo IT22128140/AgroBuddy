@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:agro_buddy/components/my_button.dart';
 import 'package:agro_buddy/services/database.dart';
 import 'package:agro_buddy/components/my_button_small.dart';
+import "package:firebase_auth/firebase_auth.dart";
 
 class AnimalList extends StatefulWidget {
   const AnimalList({super.key});
@@ -16,17 +17,39 @@ class AnimalList extends StatefulWidget {
 
 class _AnimalListState extends State<AnimalList> {
   final DatabaseService databaseService = DatabaseService();
+  final User user = FirebaseAuth.instance.currentUser!;
 
   Future<void> scanQRcodeNormal() async {
     try {
       String qrcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           '#ff6666', AppLocalizations.of(context)!.cancel, true, ScanMode.QR);
-      Animal animal = await databaseService.getAnimalData(qrcodeScanRes);
+      Animal animal =
+          await databaseService.getAnimalData(qrcodeScanRes, user.uid);
 
       Navigator.pushNamed(context, 'animal_profile',
           arguments: {'animal': animal, 'id': qrcodeScanRes});
     } catch (e) {
       debugPrint(e.toString());
+    }
+  }
+
+  getAnimalbyLocalisation(type) {
+    if (type == "cattle") {
+      return AppLocalizations.of(context)!.cattle;
+    } else if (type == "chicken") {
+      return AppLocalizations.of(context)!.chicken;
+    } else if (type == "pigs") {
+      return AppLocalizations.of(context)!.pigs;
+    } else if (type == "goat") {
+      return AppLocalizations.of(context)!.goat;
+    } else if (type == "buffalo") {
+      return AppLocalizations.of(context)!.buffalo;
+    } else if (type == "ducks") {
+      return AppLocalizations.of(context)!.ducks;
+    } else if (type == 'bees') {
+      return AppLocalizations.of(context)!.bees;
+    } else {
+      return AppLocalizations.of(context)!.other;
     }
   }
 
@@ -41,7 +64,7 @@ class _AnimalListState extends State<AnimalList> {
           children: [
             Expanded(
               child: StreamBuilder<QuerySnapshot>(
-                stream: databaseService.getanimalsStream(),
+                stream: databaseService.getanimalsStream(user.uid),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(
@@ -87,7 +110,7 @@ class _AnimalListState extends State<AnimalList> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      animal.type,
+                                      getAnimalbyLocalisation(animal.type),
                                       style: const TextStyle(
                                           color: Colors.black, fontSize: 20),
                                     ),

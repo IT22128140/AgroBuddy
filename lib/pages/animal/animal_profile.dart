@@ -83,6 +83,26 @@ class _AnimalProfileState extends State<AnimalProfile> {
     return snapshot.docs.map((doc) => doc.data()).toList();
   }
 
+  getAnimalbyLocalisation(type) {
+    if (type == "cattle") {
+      return AppLocalizations.of(context)!.cattle;
+    } else if (type == "chicken") {
+      return AppLocalizations.of(context)!.chicken;
+    } else if (type == "pigs") {
+      return AppLocalizations.of(context)!.pigs;
+    } else if (type == "goat") {
+      return AppLocalizations.of(context)!.goat;
+    } else if (type == "buffalo") {
+      return AppLocalizations.of(context)!.buffalo;
+    } else if (type == "ducks") {
+      return AppLocalizations.of(context)!.ducks;
+    } else if (type == 'bees') {
+      return AppLocalizations.of(context)!.bees;
+    } else {
+      return AppLocalizations.of(context)!.other;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -183,7 +203,7 @@ class _AnimalProfileState extends State<AnimalProfile> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        widget.animal.type,
+                        getAnimalbyLocalisation(widget.animal.type),
                         style:
                             const TextStyle(color: Colors.black, fontSize: 20),
                       ),
@@ -286,7 +306,10 @@ class _AnimalProfileState extends State<AnimalProfile> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState ==
                             ConnectionState.waiting) {
-                          return const CircularProgressIndicator();
+                          return const CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                                Color.fromARGB(255, 250, 230, 35)),
+                          );
                         } else if (snapshot.hasError) {
                           return Text(
                             AppLocalizations.of(context)!.error,
