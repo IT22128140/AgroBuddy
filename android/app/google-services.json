@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "775420481811",
+    "project_id": "agrobuddy-883cd",
+    "storage_bucket": "agrobuddy-883cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775420481811:android:7677bf65b3a419147d0ae6",
+        "android_client_info": {
+          "package_name": "com.agro_buddy.ap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI9jzz9swYE2EdJfxvjS8DkfGEXnVQ2ek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775420481811:android:0ceadc1d10d1a6347d0ae6",
+        "android_client_info": {
+          "package_name": "com.agrobuddy.agro_buddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI9jzz9swYE2EdJfxvjS8DkfGEXnVQ2ek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
