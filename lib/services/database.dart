@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:agro_buddy/models/animal.dart';
 
 class DatabaseService {
+  
   //create a animal profile
   final CollectionReference animalCollection =
       FirebaseFirestore.instance.collection('animals');

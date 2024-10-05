@@ -14,10 +14,8 @@ class AnimalAdd extends StatefulWidget {
 }
 
 class _AnimalAddState extends State<AnimalAdd> {
-  //database service
   final DatabaseService databaseService = DatabaseService();
 
-  //text field controllers
   final TextEditingController nameController = TextEditingController();
   final TextEditingController birtdayController = TextEditingController();
   final TextEditingController typeController = TextEditingController();
@@ -127,11 +125,11 @@ class _AnimalAddState extends State<AnimalAdd> {
                                   data: ThemeData.light().copyWith(
                                     colorScheme: ColorScheme.light(
                                       primary: const Color(
-                                          0xff28631f), // header background color
+                                          0xff28631f),
                                       onPrimary:
-                                          Colors.white, // header text color
+                                          Colors.white,
                                       onSurface:
-                                          Colors.black, // body text color
+                                          Colors.black,
                                     ),
                                     dialogBackgroundColor: Colors.white,
                                   ),
