@@ -790,5 +790,17 @@
     "description": "ජූලි - දෙසැම්බර්",
     "type": "text",
     "placeholders": {}
+  },
+  "pw_reset_suc": "විද්‍යුත් තැපෑල පිරික්සන්න",
+  "@pw_reset_suc": {
+      "description": "විද්‍යුත් තැපෑල පිරික්සන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "pw_reset_err": "නිවැරදි විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
+  "@pw_reset_err": {
+      "description": "නිවැරදි විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
+      "type": "text",
+      "placeholders": {}
   }
 }

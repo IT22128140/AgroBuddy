@@ -790,5 +790,17 @@
     "description": "July - December",
     "type": "text",
     "placeholders": {}
+  },
+  "pw_reset_suc": "Email Sent to Reset Password",
+  "@pw_reset_suc": {
+      "description": "Email Sent to Reset Password",
+      "type": "text",
+      "placeholders": {}
+  },
+  "pw_reset_err": "Invalid Email",
+  "@pw_reset_err": {
+      "description": "Invalid Email",
+      "type": "text",
+      "placeholders": {}
   }
 }
