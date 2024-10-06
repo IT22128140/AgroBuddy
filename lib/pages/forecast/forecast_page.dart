@@ -10,7 +10,7 @@ class ForecastPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
     return Scaffold(
-      appBar: const UpperAppBar(),
+      appBar: UpperAppBar(),
       backgroundColor: Color.fromARGB(255, 40, 99, 31),
       drawer: MyDrawer(),
       body: WillPopScope(

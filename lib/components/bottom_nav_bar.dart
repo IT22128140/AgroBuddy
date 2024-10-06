@@ -14,7 +14,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
-  final List<Widget> screens = const [
+  final List<Widget> screens = [
     RecordPage(),
     ForecastPage(),
     StockScreen(),
@@ -46,8 +46,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   RecordPage.resetToRecordList();
                   // } else if (index == 1) {
                   //   ForecastPage.resetToForecastList();
-                  // } else if (index == 2) {
-                  //   StockScreen.resetToStockList();
+                } else if (index == 2) {
+                  StockScreen.resetToStockList();
                 } else if (index == 3) {
                   AnimalPage.resetToAnimalList();
                 }
