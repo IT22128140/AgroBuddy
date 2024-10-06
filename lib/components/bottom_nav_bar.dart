@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:agro_buddy/pages/animal/animal_page.dart';
 import 'package:agro_buddy/pages/forecast/forecast_page.dart';
-import 'package:agro_buddy/pages/records/records.dart';
+import 'package:agro_buddy/pages/records/record_page.dart';
 import 'package:agro_buddy/pages/stock/stock.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -15,7 +15,7 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
   final List<Widget> screens = const [
-    RecordsScreen(),
+    RecordPage(),
     ForecastPage(),
     StockScreen(),
     AnimalPage(),
@@ -42,7 +42,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
             if (mounted) {
               setState(() {
                 this.index = index;
-                if (index == 3) {
+                if (index == 0) {
+                  RecordPage.resetToRecordList();
+                  // } else if (index == 1) {
+                  //   ForecastPage.resetToForecastList();
+                  // } else if (index == 2) {
+                  //   StockScreen.resetToStockList();
+                } else if (index == 3) {
                   AnimalPage.resetToAnimalList();
                 }
               });
