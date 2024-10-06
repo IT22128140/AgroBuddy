@@ -13,11 +13,16 @@ import 'package:agro_buddy/models/animal.dart';
 
 class AnimalPage extends StatelessWidget {
   const AnimalPage({super.key});
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
+
+  static void resetToAnimalList() {
+    navigatorKey.currentState
+        ?.pushNamedAndRemoveUntil('animal_list', (route) => false);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
     return Scaffold(
       appBar: const UpperAppBar(),
       drawer: const MyDrawer(),

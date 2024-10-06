@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:agro_buddy/services/database.dart';
@@ -15,6 +16,7 @@ class AnimalAdd extends StatefulWidget {
 
 class _AnimalAddState extends State<AnimalAdd> {
   final DatabaseService databaseService = DatabaseService();
+  final User user = FirebaseAuth.instance.currentUser!;
 
   final TextEditingController nameController = TextEditingController();
   final TextEditingController birtdayController = TextEditingController();
@@ -61,20 +63,43 @@ class _AnimalAddState extends State<AnimalAdd> {
                             errorStyle: const TextStyle(
                                 color: Color.fromARGB(255, 250, 230, 35)),
                           ),
-                          items: <String>[
-                            AppLocalizations.of(context)!.cow,
-                            AppLocalizations.of(context)!.goat,
-                            AppLocalizations.of(context)!.chiken,
-                            AppLocalizations.of(context)!.pigs,
-                          ].map((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                          onChanged: (String? newvalue) {
+                          items: [
+                            DropdownMenuItem<String>(
+                                value: 'cattle',
+                                child:
+                                    Text(AppLocalizations.of(context)!.cattle)),
+                            DropdownMenuItem<String>(
+                                value: 'goat',
+                                child:
+                                    Text(AppLocalizations.of(context)!.goat)),
+                            DropdownMenuItem<String>(
+                                value: 'chicken',
+                                child: Text(
+                                    AppLocalizations.of(context)!.chicken)),
+                            DropdownMenuItem<String>(
+                                value: 'pigs',
+                                child:
+                                    Text(AppLocalizations.of(context)!.pigs)),
+                            DropdownMenuItem<String>(
+                                value: 'buffalo',
+                                child: Text(
+                                    AppLocalizations.of(context)!.buffalo)),
+                            DropdownMenuItem<String>(
+                                value: 'ducks',
+                                child:
+                                    Text(AppLocalizations.of(context)!.ducks)),
+                            DropdownMenuItem<String>(
+                                value: 'bees',
+                                child:
+                                    Text(AppLocalizations.of(context)!.bees)),
+                            DropdownMenuItem<String>(
+                                value: 'other',
+                                child:
+                                    Text(AppLocalizations.of(context)!.other)),
+                          ],
+                          onChanged: (String? newValue) {
                             setState(() {
-                              typeController.text = newvalue!;
+                              typeController.text = newValue!;
                             });
                           },
                         ),
@@ -124,12 +149,9 @@ class _AnimalAddState extends State<AnimalAdd> {
                                 return Theme(
                                   data: ThemeData.light().copyWith(
                                     colorScheme: ColorScheme.light(
-                                      primary: const Color(
-                                          0xff28631f),
-                                      onPrimary:
-                                          Colors.white,
-                                      onSurface:
-                                          Colors.black,
+                                      primary: const Color(0xff28631f),
+                                      onPrimary: Colors.white,
+                                      onSurface: Colors.black,
                                     ),
                                     dialogBackgroundColor: Colors.white,
                                   ),
@@ -225,7 +247,7 @@ class _AnimalAddState extends State<AnimalAdd> {
                             }
 
                             await databaseService.addAnimal(Animal(
-                                uid: '1234',
+                                uid: user.uid,
                                 name: nameController.text,
                                 type: typeController.text,
                                 birthday:

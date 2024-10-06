@@ -89,14 +89,14 @@
     "type": "text",
     "placeholders": {}
   },
-  "cow": "ගවයා",
-  "@cow": {
+  "cattle": "ගවයා",
+  "@cattle": {
     "description": "ගවයා",
     "type": "text",
     "placeholders": {}
   },
-  "chiken": "කුකුලා",
-  "@chiken": {
+  "chicken": "කුකුලා",
+  "@chicken": {
     "description": "කුකුලා",
     "type": "text",
     "placeholders": {}
@@ -110,6 +110,30 @@
   "goat": "එලුවා",
   "@goat": {
     "description": "එලුවා",
+    "type": "text",
+    "placeholders": {}
+  },
+  "buffalo": "මී හරක්",
+  "@buffalo": {
+    "description": "මී හරක්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ducks": "තාරාවන්",
+  "@ducks": {
+    "description": "තාරාවන්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "bees": "මී මැස්සන්",
+  "@bees": {
+    "description": "මී මැස්සන්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "other": "වෙනත්",
+  "@other": {
+    "description": "වෙනත්",
     "type": "text",
     "placeholders": {}
   },

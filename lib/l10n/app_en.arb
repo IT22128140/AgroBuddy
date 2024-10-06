@@ -89,14 +89,14 @@
     "type": "text",
     "placeholders": {}
   },
-  "cow": "Cow",
-  "@cow": {
-    "description": "Cow",
+  "cattle": "cattle",
+  "@cattle": {
+    "description": "cattle",
     "type": "text",
     "placeholders": {}
   },
-  "chiken": "Chiken",
-  "@chiken": {
+  "chicken": "Chiken",
+  "@chicken": {
     "description": "Chiken",
     "type": "text",
     "placeholders": {}
@@ -110,6 +110,30 @@
   "goat": "Goat",
   "@goat": {
     "description": "Goat",
+    "type": "text",
+    "placeholders": {}
+  },
+  "buffalo": "Buffalo",
+  "@buffalo": {
+    "description": "Buffalo",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ducks": "Ducks",
+  "@ducks": {
+    "description": "Ducks",
+    "type": "text",
+    "placeholders": {}
+  },
+  "bees": "Bees",
+  "@bees": {
+    "description": "Bees",
+    "type": "text",
+    "placeholders": {}
+  },
+  "other": "Other",
+  "@other": {
+    "description": "Other",
     "type": "text",
     "placeholders": {}
   },

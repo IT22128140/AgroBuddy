@@ -40,7 +40,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
           selectedIndex: index,
           onDestinationSelected: (index) {
             if (mounted) {
-              setState(() => this.index = index);
+              setState(() {
+                this.index = index;
+                if (index == 3) {
+                  AnimalPage.resetToAnimalList();
+                }
+              });
             }
           },
           destinations: [
