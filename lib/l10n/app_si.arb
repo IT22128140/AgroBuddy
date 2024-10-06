@@ -1,0 +1,428 @@
+{
+  "app_title": "ඇග්‍රොBuddy",
+  "@app_title": {
+    "description": "යෙදුමේ මාතෘකාව",
+    "type": "text",
+    "placeholders": {}
+  },
+  "app_name": "ඇග්‍රොBuddy",
+  "@app_name": {
+    "description": "යෙදුමේ නම",
+    "type": "text",
+    "placeholders": {}
+  },
+  "records": "වාර්තා",
+  "@records": {
+    "description": "වාර්තා",
+    "type": "text",
+    "placeholders": {}
+  },
+  "forecast": "අනාවැකි",
+  "@forecast": {
+    "description": "අනාවැකි",
+    "type": "text",
+    "placeholders": {}
+  },
+  "stock": "තොග",
+  "@stock": {
+    "description": "තොග",
+    "type": "text",
+    "placeholders": {}
+  },
+  "name_s": "නම : ",
+  "@name_s": {
+    "description": "නම",
+    "type": "text",
+    "placeholders": {}
+  },
+  "age_s": "වයස : ",
+  "@age_s": {
+    "description": "වයස",
+    "type": "text",
+    "placeholders": {}
+  },
+  "name": "නම",
+  "@name": {
+    "description": "නම",
+    "type": "text",
+    "placeholders": {}
+  },
+  "age": "වයස",
+  "@age": {
+    "description": "වයස",
+    "type": "text",
+    "placeholders": {}
+  },
+  "date": "දිනය",
+  "@date": {
+    "description": "දිනය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "add": "එකතු කරන්න",
+  "@add": {
+    "description": "එකතු කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "මකන්න",
+  "@delete": {
+    "description": "මකන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "edit": "සංස්කරණය කරන්න",
+  "@edit": {
+    "description": "සංස්කරණය කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "scan": "QR ස්කෑන් කරන්න",
+  "@scan": {
+    "description": "QR ස්කෑන් කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "animals": "සතුන්",
+  "@animals": {
+    "description": "සතුන්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cattle": "ගවයා",
+  "@cattle": {
+    "description": "ගවයා",
+    "type": "text",
+    "placeholders": {}
+  },
+  "chicken": "කුකුලා",
+  "@chicken": {
+    "description": "කුකුලා",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pigs": "ඌරා",
+  "@pigs": {
+    "description": "ඌරා",
+    "type": "text",
+    "placeholders": {}
+  },
+  "goat": "එලුවා",
+  "@goat": {
+    "description": "එලුවා",
+    "type": "text",
+    "placeholders": {}
+  },
+  "buffalo": "මී හරක්",
+  "@buffalo": {
+    "description": "මී හරක්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ducks": "තාරාවන්",
+  "@ducks": {
+    "description": "තාරාවන්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "bees": "මී මැස්සන්",
+  "@bees": {
+    "description": "මී මැස්සන්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "other": "වෙනත්",
+  "@other": {
+    "description": "වෙනත්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "harvest_m": "මාසය සඳහා සම්පූර්ණ අස්වැන්න:",
+  "@harvest_m": {
+    "description": "මාසය සඳහා සම්පූර්ණ අස්වැන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "qr_download": "QR බාගත කරන්න",
+  "@qr_download": {
+    "description": "QR බාගත කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "harvest": "අස්වැන්න",
+  "@harvest": {
+    "description": "අස්වැන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "date_s": "දිනය : ",
+  "@date_s": {
+    "description": "දිනය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "quantity_s": "ප්‍රමාණය : ",
+  "@quantity_s": {
+    "description": "ප්‍රමාණය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "notes_s": "සටහන් : ",
+  "@notes_s": {
+    "description": "සටහන්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "save": "සුරකින්න",
+  "@save": {
+    "description": "සුරකින්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "quantity": "ප්‍රමාණය",
+  "@quantity": {
+    "description": "ප්‍රමාණය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "notes": "සටහන්",
+  "@notes": {
+    "description": "සටහන්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "අවලංගු කරන්න",
+  "@cancel": {
+    "description": "අවලංගු කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "error": "දෝෂයක්",
+  "@error": {
+    "description": "දෝෂයක්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "no_data": "දත්ත නොමැත",
+  "@no_data": {
+    "description": "දත්ත නොමැත",
+    "type": "text",
+    "placeholders": {}
+  },
+  "birthday": "උපන්දිනය",
+  "@birthday": {
+    "description": "උපන්දිනය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "years": "වසර",
+  "@years": {
+    "description": "වසර",
+    "type": "text",
+    "placeholders": {}
+  },
+  "months": "මාස",
+  "@months": {
+    "description": "මාස",
+    "type": "text",
+    "placeholders": {}
+  },
+  "and": "සහ",
+  "@and": {
+    "description": "සහ",
+    "type": "text",
+    "placeholders": {}
+  },
+  "view": "නරඹන්න",
+  "@view": {
+    "description": "නරඹන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "upload_image": "පින්තූරය උඩුගත කරන්න",
+  "@upload_image": {
+    "description": "පින්තූරය උඩුගත කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "err_name": "කරුණාකර නමක් ඇතුළත් කරන්න",
+  "@err_name": {
+    "description": "කරුණාකර නමක් ඇතුළත් කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "err_type": "කරුණාකර වර්ගයක් තෝරන්න",
+  "@err_type": {
+    "description": "කරුණාකර වර්ගයක් තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "err_birthday": "උපන්දිනය ඇතුළත් කරන්න",
+  "@err_birthday": {
+    "description": "උපන්දිනය ඇතුළත් කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "err_animalimage": "පින්තූරය උඩුගත කරන්න",
+  "@err_animalimage": {
+    "description": "පින්තූරය උඩුගත කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "err_notes": "කරුණාකර සටහන් ඇතුළත් කරන්න",
+  "@err_notes": {
+    "description": "කරුණාකර සටහන් ඇතුළත් කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "err_quantity": "කරුණාකර ප්‍රමාණය ඇතුළත් කරන්න",
+  "@err_quantity": {
+    "description": "කරුණාකර ප්‍රමාණය ඇතුළත් කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "err_date": "කරුණාකර දිනය ඇතුළත් කරන්න",
+  "@err_date": {
+    "description": "කරුණාකර දිනය ඇතුළත් කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirm_delete": "ඔබට මෙම වාර්තාව මැකීමට අවශ්‍ය බව විශ්වාසද?",
+  "@confirm_delete": {
+    "description": "ඔබට මෙම වාර්තාව මැකීමට අවශ්‍ය බව විශ්වාසද?",
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete_confirmation": "ඔබට මෙම ක්‍රියාව පසුගමනය කළ නොහැක",
+  "@delete_confirmation": {
+    "description": "ඔබට මෙම ක්‍රියාව පසුගමනය කළ නොහැක",
+    "type": "text",
+    "placeholders": {}
+  },
+  "login_name": "ආයුබෝවන් පුරන්න",
+  "@login_name": {
+      "description": "පුරන්න මාතෘකාව",
+      "type": "text",
+      "placeholders": {}
+  },
+  "email_input": "විද්‍යුත් තැපෑල",
+  "@email_input": {
+      "description": "විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "pw_input": "මුරපදය",
+  "@pw_input": {
+      "description": "මුරපදය ඇතුලත් කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "forgotpw_input": "මුරපදය අමතක ද?",
+  "@forgotpw_input": {
+      "description": "මුරපදය අමතක ද?",
+      "type": "text",
+      "placeholders": {}
+  },
+  "signin_btn": "පුරන්න",
+  "@signin_btn": {
+      "description": "පුරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "no_acc": "මා හට ගිණුමක් නැත?",
+  "@no_acc": {
+      "description": "මා හට ගිණුමක් නැත?",
+      "type": "text",
+      "placeholders": {}
+  },
+  "signup_btn": "ලියාපදිංචි වන්න",
+  "@signup_btn": {
+      "description": "ලියාපදිංචි වන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "pw_mismatch": "මුරපද එකිනෙකට නොගැලපේ!",
+  "@pw_mismatch": {
+      "description": "මුරපද එකිනෙකට නොගැලපේ",
+      "type": "text",
+      "placeholders": {}
+  },
+  "signup_text": "ඔබේ ගිණුම නිර්මාණය කරන්න",
+  "@signup_text": {
+      "description": "ඔබේ ගිණුම නිර්මාණය කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "username_input": "පරිශීලක නාමය",
+  "@username_input": {
+      "description": "පරිශීලක නාමය ඇතුලත් කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "conpw_input": "මුරපදය තහවුරු කරන්න",
+  "@conpw_input": {
+      "description": "මුරපදය තහවුරු කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "yes_acc": "දැනටමත් ගිණුමක් ඇත?",
+  "@yes_acc": {
+      "description": "දැනටමත් ගිණුමක් ඇත?",
+      "type": "text",
+      "placeholders": {}
+  },
+  "harvest_imp": "වැදගත්",
+  "@harvest_imp": {
+      "description": "වැදගත්",
+      "type": "text",
+      "placeholders": {}
+  },
+  "harvest_imp_text": "තාක්ෂණික, ජීව විද්‍යාත්මක සහ පාරිසරික සාධක හේතුවෙන් පුරෝකථනය කරන ලද අස්වැන්න වෙනස් විය හැක.",
+  "@harvest_imp_text": {
+      "description": "වැදගත් පාඨය",
+      "type": "text",
+      "placeholders": {}
+  },
+  "st_yield": "සම්මත අස්වැන්න (අක්කරයට කිලෝ ග්‍රෑම්)",
+  "@st_yield": {
+      "description": "සම්මත අස්වැන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "cult_area": "වගා බිම් ප්‍රමාණය (අක්කර)",
+  "@cult_area": {
+      "description": "වගා බිම් ප්‍රමාණය",
+      "type": "text",
+      "placeholders": {}
+  },
+  "last_yield": "පසුගිය සමයේ අස්වැන්න (අක්කරයට කිලෝ ග්‍රෑම්)",
+  "@last_yield": {
+      "description": "පසුගිය සමයේ අස්වැන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "cast_harv": "පුරෝකථනය කරන ලද අස්වැන්න",
+  "@cast_harv": {
+      "description": "පුරෝකථනය කරන ලද අස්වැන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "amount_kg": "කිලෝ ග්‍රෑම්",
+  "@amount_kg": {
+      "description": "ප්‍රමාණය",
+      "type": "text",
+      "placeholders": {}
+  },
+  "calc_btn": "ගණනය කරන්න",
+  "@calc_btn": {
+      "description": "ගණනය කරන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "logout_btn": "පිටවීම",
+  "@logout_btn": {
+      "description": "පිටවීම",
+      "type": "text",
+      "placeholders": {}
+  }
+}
