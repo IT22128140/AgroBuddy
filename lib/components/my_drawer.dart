@@ -12,7 +12,6 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-
   //logout user
   void logout() {
     FirebaseAuth.instance.signOut();
@@ -37,10 +36,10 @@ class _MyDrawerState extends State<MyDrawer> {
             children: [
               DrawerHeader(
                 child: Image.asset(
-                  'lib/images/logo.png',
+                  'lib/resources/images/logo.png',
                 ),
               ),
-              
+
               // Language settings
               Padding(
                 padding: const EdgeInsets.only(left: 75.0),
@@ -79,28 +78,27 @@ class _MyDrawerState extends State<MyDrawer> {
 
           //logout button
           Padding(
-            padding: const EdgeInsets.only(left: 75.0, bottom: 25),
-            child: ListTile(
-              leading: Icon(
-                Icons.logout,
-                color: Colors.black,
-              ),
-              title: Text(
-                AppLocalizations.of(context)!.logout_btn,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+              padding: const EdgeInsets.only(left: 75.0, bottom: 25),
+              child: ListTile(
+                leading: Icon(
+                  Icons.logout,
+                  color: Colors.black,
                 ),
-              ),
-              onTap: () {
-                //pop drawer
-                Navigator.pop(context);
+                title: Text(
+                  AppLocalizations.of(context)!.logout_btn,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  //pop drawer
+                  Navigator.pop(context);
 
-                //logout
-                logout();
-              },
-            )
-          ),
+                  //logout
+                  logout();
+                },
+              )),
         ],
       ),
     );

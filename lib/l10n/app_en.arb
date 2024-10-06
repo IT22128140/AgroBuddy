@@ -471,97 +471,97 @@
   "@cate_err": {
     "description": "Please select a category type",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate": "Select Category",
   "@cate": {
     "description": "Selecr Category",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_capital": "Capital",
   "@cate_capital": {
     "description": "Capital",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_harvest": "Harvest",
   "@cate_harvest": {
     "description": "Harvest",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_eggs": "Eggs",
   "@cate_eggs": {
     "description": "Eggs",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_milk": "Milk",
   "@cate_milk": {
     "description": "Milk",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_meat": "Meat",
   "@cate_meat": {
     "description": "Meat",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_honey": "Honey",
   "@cate_honey": {
     "description": "Honey",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_seeds": "Seeds",
   "@cate_seeds": {
     "description": "Seeds",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_fertilizer": "Fertilizer",
   "@cate_fertilizer": {
     "description": "Fertilizer",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_pesticide": "Pesticide",
   "@cate_pesticide": {
     "description": "Pesticide",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_animalfeed": "Animal Feed",
   "@cate_animalfeed": {
     "description": "Animals Feed",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_vetdrugs": "Veterinary Drugs",
   "@cate_vetdrugs": {
     "description": "Veterinary Drugs",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_labor": "Labor",
   "@cate_labor": {
     "description": "Labor",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_machine": "Machine Repair",
   "@cate_machine": {
     "description": "Machine Repair",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_rent": "Rent",
   "@cate_rent": {
     "description": "Rent",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "amount_err": "Please add an amount",
   "@amount_err": {
@@ -573,7 +573,7 @@
   "@amount": {
     "description": "Add Amount (Rs.)",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "sel_date_err": "Please select a date",
   "@sel_date_err": {
@@ -585,7 +585,7 @@
   "@sel_date": {
     "description": "Select Date",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "sel_time_err": "Please select a time",
   "@sel_time_err": {
@@ -597,13 +597,13 @@
   "@sel_time": {
     "description": "Select Time",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "add_notes": "Add Notes",
   "@add_notes": {
     "description": "Add Notes",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "sel_type_err": "Please Select a Type",
   "@sel_type_err": {
@@ -802,5 +802,95 @@
       "description": "Invalid Email",
       "type": "text",
       "placeholders": {}
+  },
+  "type": "Type",
+  "@type": {
+    "description": "Type",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "purchasedDate": "Purchased Date",
+  "@purchasedDate": {
+    "description": "Purchased Date",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "expDate": "Exp Date",
+  "@expDate": {
+    "description": "Exp Date",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "stockID": "Stock ID",
+  "@stockID": {
+    "description": "Stock ID",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "purchasedPrice": "Price",
+  "@purchasedPrice": {
+    "description": "Price",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "supplier": "Supplier",
+  "@supplier": {
+    "description": "Supplier",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "additionalNotes": "Additional Notes",
+  "@additionalNotes": {
+    "description": "Additional Notes",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "stockName": "Name",
+  "@stockName": {
+    "description": "Name",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "noData": "No Stock Available",
+  "@noData": {
+    "description": "No Stock Available",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "confirmDelete": "Are you sure you want to delete this record?",
+  "@confirmDelete": {
+    "description":"Are you sure you want to delete this record?",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "deleteConfirmationMessage": "You cannot undo this action.",
+  "@deleteConfirmationMessage": {
+    "description":"You cannot undo this action.",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "expThisWeek": "Expiring This Week",
+  "@expThisWeek": {
+    "description":"Expiring This Week",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "expNextMonth": "Expiring Next Month",
+  "@expNextMonth": {
+    "description":"Expiring Next Month",
+    "type": "text",
+    "placeholders": {}
   }
 }

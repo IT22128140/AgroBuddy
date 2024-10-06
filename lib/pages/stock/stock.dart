@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_super_parameters
 
+import 'package:agro_buddy/components/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:agro_buddy/components/upper_appbar.dart';
 import 'package:agro_buddy/pages/stock/add_stock.dart';
@@ -10,14 +11,20 @@ import 'package:agro_buddy/pages/stock/notification_list.dart';
 import 'package:agro_buddy/models/stock_model.dart'; // Adjust the path if necessary
 
 class StockScreen extends StatelessWidget {
-  const StockScreen({Key? key}) : super(key: key);
+  StockScreen({Key? key}) : super(key: key);
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
+
+  static void resetToStockList() {
+    navigatorKey.currentState
+        ?.pushNamedAndRemoveUntil('record_list', (route) => false);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
     return Scaffold(
       appBar: UpperAppBar(),
+      drawer: const MyDrawer(),
       body: WillPopScope(
         onWillPop: () async {
           if (navigatorKey.currentState?.canPop() ?? false) {

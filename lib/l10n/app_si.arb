@@ -471,97 +471,97 @@
   "@cate_err": {
     "description": "කරුණාකර කාණ්ඩයක් තෝරන්න",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate": "කාණ්ඩය තෝරන්න",
   "@cate": {
     "description": "කාණ්ඩය තෝරන්න",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_capital": "ප්‍රාග්ධනය",
   "@cate_capital": {
     "description": "ප්‍රාග්ධනය",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_harvest": "අස්වැන්න",
   "@cate_harvest": {
     "description": "අස්වැන්න",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_eggs": "බිත්තර",
   "@cate_eggs": {
     "description": "බිත්තර",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_milk": "කිරි",
   "@cate_milk": {
     "description": "කිරි",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_meat": "මස්",
   "@cate_meat": {
     "description": "මස්",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_honey": "මී පැණි",
   "@cate_honey": {
     "description": "මී පැණි",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_seeds": "බීජ",
   "@cate_seeds": {
     "description": "බීජ",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_fertilizer": "පොහොර",
   "@cate_fertilizer": {
     "description": "පොහොර",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_pesticide": "කෘමි නාශක",
   "@cate_pesticide": {
     "description": "කෘමි නාශක",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_animalfeed": "සත්ව ආහාර",
   "@cate_animalfeed": {
     "description": "සත්ව ආහාර",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_vetdrugs": "පශු ඖශධ",
   "@cate_vetdrugs": {
     "description": "පශු ඖශධ",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_labor": "ශ්‍රමය",
   "@cate_labor": {
     "description": "ශ්‍රමය",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_machine": "යන්ත්‍ර අළුත්වැඩියා",
   "@cate_machine": {
     "description": "යන්ත්‍ර අළුත්වැඩියා",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "cate_rent": "කුලිය",
   "@cate_rent": {
     "description": "කුලිය",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "amount_err": "කරුණාකර මුදල ඇතුළත් කරන්න",
   "@amount_err": {
@@ -573,7 +573,7 @@
   "@amount": {
     "description": "මුදල ඇතුළත් කරන්න (රු.)",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "sel_date_err": "කරුණාකර දිනයක් තෝරන්න",
   "@sel_date_err": {
@@ -585,7 +585,7 @@
   "@sel_date": {
     "description": "දිනය තෝරන්න",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "sel_time_err": "කරුණාකර කාලයක් තෝරන්න",
   "@sel_time_err": {
@@ -597,13 +597,13 @@
   "@sel_time": {
     "description": "කාලය තෝරන්න",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "add_notes": "සටහනක් යොදන්න",
   "@add_notes": {
     "description": "සටහනක් යොදන්න",
     "type": "text",
-    "placeholder": {}
+    "placeholders": {}
   },
   "sel_type_err": "කරුණාකර වර්ගයක් තෝරන්න",
   "@sel_type_err": {
@@ -802,5 +802,96 @@
       "description": "නිවැරදි විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
       "type": "text",
       "placeholders": {}
+  },
+  "type": "වර්ගය",
+  "@type": {
+    "description": "වර්ගය",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "purchasedDate": "මිලදී ගත් දිනය",
+  "@purchasedDate": {
+    "description": "මිලදී ගත් දිනය",
+    "type": "text",
+    "placeholders": {}
+  },
+
+
+  "expDate": "කල් ඉකුත් වන දිනය",
+  "@expDate": {
+    "description": "කල් ඉකුත් වන දිනය",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "purchasedPrice": "මිල",
+  "@purchasedPrice": {
+    "description": "මිල",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "supplier": "සැපයුම්කරු",
+  "@supplier": {
+    "description": "සැපයුම්කරු",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "additionalNotes": "අමතර සටහන්",
+  "@additionalNotes": {
+    "description": "අමතර සටහන්",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "stockID": "තොග හැඳුනුම",
+  "@stockID": {
+    "description": "තොග හැඳුනුම",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "stockName": "නම",
+  "@stockName": {
+    "description": "නම",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "noData": "තොග නොමැත",
+  "@noData": {
+    "description": "තොග නොමැත",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "confirmDelete": "ඔබට මෙම වාර්තාව මැකීමට අවශ්‍ය බව විශ්වාසද?",
+  "@confirmDelete": {
+    "description":"ඔබට මෙම වාර්තාව මැකීමට අවශ්‍ය බව විශ්වාසද?",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "deleteConfirmationMessage": "ඔබට මෙම ක්‍රියාව පසුගමනය කළ නොහැක.",
+  "@deleteConfirmationMessage": {
+    "description":"ඔබට මෙම ක්‍රියාව පසුගමනය කළ නොහැක.",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "expThisWeek": "මෙම සතියේ කල් ඉකුත් වේ",
+  "@expThisWeek": {
+    "description":"මෙම සතියේ කල් ඉකුත් වේ",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "expNextMonth": "ලබන මස කල් ඉකුත් වේ",
+  "@expNextMonth": {
+    "description":"ලබන මස කල් ඉකුත් වේ",
+    "type": "text",
+    "placeholders": {}
   }
 }
