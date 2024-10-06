@@ -424,5 +424,371 @@
     "description": "Logout",
     "type": "text",
     "placeholders": {}
+  },
+  "income": "Income",
+  "@income": {
+    "description": "Income",
+    "type": "text",
+    "placeholders": {}
+  },
+  "expense": "Expense",
+  "@expense": {
+    "description": "Expense",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t_err": "Please select an account type",
+  "@acc_t_err": {
+    "description": "Please select an account type",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t": "Select Account type",
+  "@acc_t": {
+    "description": "Select Account type",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t_cash": "Cash",
+  "@acc_t_cash": {
+    "description": "Cash",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t_bank": "Bank Card",
+  "@acc_t_bank": {
+    "description": "Bank Card",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t_loan": "Loan",
+  "@acc_t_loan": {
+    "description": "Loan",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cate_err": "Please select a category type",
+  "@cate_err": {
+    "description": "Please select a category type",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate": "Select Category",
+  "@cate": {
+    "description": "Selecr Category",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_capital": "Capital",
+  "@cate_capital": {
+    "description": "Capital",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_harvest": "Harvest",
+  "@cate_harvest": {
+    "description": "Harvest",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_eggs": "Eggs",
+  "@cate_eggs": {
+    "description": "Eggs",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_milk": "Milk",
+  "@cate_milk": {
+    "description": "Milk",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_meat": "Meat",
+  "@cate_meat": {
+    "description": "Meat",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_honey": "Honey",
+  "@cate_honey": {
+    "description": "Honey",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_seeds": "Seeds",
+  "@cate_seeds": {
+    "description": "Seeds",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_fertilizer": "Fertilizer",
+  "@cate_fertilizer": {
+    "description": "Fertilizer",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_pesticide": "Pesticide",
+  "@cate_pesticide": {
+    "description": "Pesticide",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_animalfeed": "Animal Feed",
+  "@cate_animalfeed": {
+    "description": "Animals Feed",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_vetdrugs": "Veterinary Drugs",
+  "@cate_vetdrugs": {
+    "description": "Veterinary Drugs",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_labor": "Labor",
+  "@cate_labor": {
+    "description": "Labor",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_machine": "Machine Repair",
+  "@cate_machine": {
+    "description": "Machine Repair",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_rent": "Rent",
+  "@cate_rent": {
+    "description": "Rent",
+    "type": "text",
+    "placeholder": {}
+  },
+  "amount_err": "Please add an amount",
+  "@amount_err": {
+    "description": "Please add an amount",
+    "type": "text",
+    "placeholders": {}
+  },
+  "amount": "Add Amount (Rs.)",
+  "@amount": {
+    "description": "Add Amount (Rs.)",
+    "type": "text",
+    "placeholder": {}
+  },
+  "sel_date_err": "Please select a date",
+  "@sel_date_err": {
+    "description": "Please select a date",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_date": "Select Date",
+  "@sel_date": {
+    "description": "Select Date",
+    "type": "text",
+    "placeholder": {}
+  },
+  "sel_time_err": "Please select a time",
+  "@sel_time_err": {
+    "description": "Please select a time",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_time": "Select Time",
+  "@sel_time": {
+    "description": "Select Time",
+    "type": "text",
+    "placeholder": {}
+  },
+  "add_notes": "Add Notes",
+  "@add_notes": {
+    "description": "Add Notes",
+    "type": "text",
+    "placeholder": {}
+  },
+  "sel_type_err": "Please Select a Type",
+  "@sel_type_err": {
+    "description": "Please select a Type",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_type": "Select Type",
+  "@sel_type": {
+    "description": "Select Type",
+    "type": "text",
+    "placeholders": {}
+  },
+  "total_s": "Total : ",
+  "@total_s": {
+    "description": "Total : ",
+    "type": "text",
+    "placeholders": {}
+  },
+  "rs": "Rs.",
+  "@rs": {
+    "description": "Rs.",
+    "type": "text",
+    "placeholders": {}
+  },
+  "show_ill": "Show Illustrations",
+  "@show_ill": {
+    "description": "Show Illustrations",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_trange": "Select Time Range",
+  "@sel_trange": {
+    "description": "Select Time Range",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_trange_err": "Please select a time range",
+  "@sel_trange_err": {
+    "description": "Please select a time range",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tr_year": "Yearly",
+  "@tr_year": {
+    "description": "Yearly",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tr_month": "Monthly",
+  "@tr_month": {
+    "description": "Monthly",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tr_sixm": "6 Months",
+  "@tr_sixm": {
+    "description": "6 Months",
+    "type": "text",
+    "placeholders": {}
+  },
+  "january": "January",
+  "@january": {
+    "description": "January",
+    "type": "text",
+    "placeholders": {}
+  },
+  "february": "February",
+  "@february": {
+    "description": "February",
+    "type": "text",
+    "placeholders": {}
+  },
+  "march": "March",
+  "@march": {
+    "description": "March",
+    "type": "text",
+    "placeholders": {}
+  },
+  "april": "April",
+  "@april": {
+    "description": "April",
+    "type": "text",
+    "placeholders": {}
+  },
+  "may": "May",
+  "@may": {
+    "description": "May",
+    "type": "text",
+    "placeholders": {}
+  },
+  "june": "June",
+  "@june": {
+    "description": "June",
+    "type": "text",
+    "placeholders": {}
+  },
+  "july": "July",
+  "@july": {
+    "description": "July",
+    "type": "text",
+    "placeholders": {}
+  },
+  "august": "August",
+  "@august": {
+    "description": "August",
+    "type": "text",
+    "placeholders": {}
+  },
+  "september": "September",
+  "@september": {
+    "description": "September",
+    "type": "text",
+    "placeholders": {}
+  },
+  "october": "October",
+  "@october": {
+    "description": "October",
+    "type": "text",
+    "placeholders": {}
+  },
+  "november": "November",
+  "@november": {
+    "description": "November",
+    "type": "text",
+    "placeholders": {}
+  },
+  "december": "December",
+  "@december": {
+    "description": "December",
+    "type": "text",
+    "placeholders": {}
+  },
+  "date_rv": "Date",
+  "@date_rv": {
+    "description": "Date",
+    "type": "text",
+    "placeholders": {}
+  },
+  "time_rv": "Time",
+  "@time_rv": {
+    "description": "Time",
+    "type": "text",
+    "placeholders": {}
+  },
+  "type_rv": "Type",
+  "@type_rv": {
+    "description": "Type",
+    "type": "text",
+    "placeholders": {}
+  },
+  "account_rv": "Account Type",
+  "@account_rv": {
+    "description": "Account Type",
+    "type": "text",
+    "placeholders": {}
+  },
+  "category_rv": "Category",
+  "@category_rv": {
+    "description": "Category",
+    "type": "text",
+    "placeholders": {}
+  },
+  "amount_rv": "Amount",
+  "@amount_rv": {
+    "description": "Amount",
+    "type": "text",
+    "placeholders": {}
+  },
+  "note_rv": "Note",
+  "@note_rv": {
+    "description": "Note",
+    "type": "text",
+    "placeholders": {}
+  },
+  "jan_jun": "January - June",
+  "@jan_jun": {
+    "description": "January - June",
+    "type": "text",
+    "placeholders": {}
+  },
+  "jul_dec": "July - December",
+  "@jul_dec": {
+    "description": "July - December",
+    "type": "text",
+    "placeholders": {}
   }
 }
