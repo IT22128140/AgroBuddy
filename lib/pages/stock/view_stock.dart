@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:agro_buddy/components/my_button.dart';
 import 'package:flutter/material.dart';
 import 'package:agro_buddy/services/stock_services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -17,13 +18,15 @@ class ViewStock extends StatefulWidget {
 
 class _ViewStockState extends State<ViewStock> {
   final StockServices _stockServices = StockServices();
-  late Future<Stock?> _stockFuture; // Allow Stock to be nullable since it can be null
+  late Future<Stock?>
+      _stockFuture; // Allow Stock to be nullable since it can be null
 
   @override
   void initState() {
     super.initState();
     print("Fetching stock with ID: ${widget.stockID}"); // Debug print
-    _stockFuture = _stockServices.getStockById(widget.stockID); // Fetch stock details by ID
+    _stockFuture = _stockServices
+        .getStockById(widget.stockID); // Fetch stock details by ID
   }
 
   @override
@@ -100,7 +103,8 @@ class _ViewStockState extends State<ViewStock> {
                           SizedBox(height: 10),
                           buildRow(
                             AppLocalizations.of(context)!.purchasedPrice,
-                            stock.purchasedPrice.toString(), // Handle nullable field
+                            stock.purchasedPrice
+                                .toString(), // Handle nullable field
                           ),
                           SizedBox(height: 10),
                           buildRow(
@@ -128,7 +132,8 @@ class _ViewStockState extends State<ViewStock> {
                                   ),
                                   child: SingleChildScrollView(
                                     child: Text(
-                                      stock.additionalNotes, // Handle nullable field
+                                      stock
+                                          .additionalNotes, // Handle nullable field
                                       style: const TextStyle(fontSize: 16),
                                     ),
                                   ),
@@ -143,9 +148,48 @@ class _ViewStockState extends State<ViewStock> {
                         right: 10,
                         child: MyDeleteButton(
                           text: AppLocalizations.of(context)!.delete,
-                          onTap: () {
-                            // Show confirmation dialog before deleting
-                            _showDeleteConfirmationDialog(stock);
+                          onTap: () async {
+                            bool? confirmDelete = await showDialog<bool>(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  backgroundColor: Colors
+                                      .white, // Change the background color
+                                  title: Text(AppLocalizations.of(context)!
+                                      .confirm_delete),
+                                  content: Text(AppLocalizations.of(context)!
+                                      .delete_confirmation),
+                                  actions: <Widget>[
+                                    Row(
+                                      children: [
+                                        MyDeleteButton(
+                                          text: AppLocalizations.of(context)!
+                                              .delete,
+                                          onTap: () {
+                                            Navigator.of(context).pop(true);
+                                          },
+                                        ),
+                                        const SizedBox(width: 10),
+                                        MyButton(
+                                          text: AppLocalizations.of(context)!
+                                              .cancel,
+                                          onTap: () {
+                                            Navigator.of(context).pop(false);
+                                          },
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                );
+                              },
+                            );
+
+                            if (confirmDelete == true) {
+                              await _stockServices
+                                  .deleteStock(stock.stockID ?? 'N/A');
+                              await Navigator.pushNamed(context, 'harvest_list',
+                                  arguments: stock.stockID);
+                            }
                           },
                         ),
                       ),
@@ -156,7 +200,8 @@ class _ViewStockState extends State<ViewStock> {
                           text: AppLocalizations.of(context)!.edit,
                           onTap: () {
                             // Edit functionality can be handled here
-                            Navigator.of(context).pushNamed('stock_edit', arguments: stock);
+                            Navigator.of(context)
+                                .pushNamed('stock_edit', arguments: stock);
                           },
                         ),
                       ),
@@ -186,34 +231,34 @@ class _ViewStockState extends State<ViewStock> {
     );
   }
 
-  // Show delete confirmation dialog
-  void _showDeleteConfirmationDialog(Stock stock) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(AppLocalizations.of(context)!.confirmDelete),
-          content: Text(AppLocalizations.of(context)!.deleteConfirmationMessage),
-          actions: [
-            TextButton(
-              onPressed: () {
-                // Cancel action
-                Navigator.of(context).pop();
-              },
-              child: Text(AppLocalizations.of(context)!.cancel),
-            ),
-            TextButton(
-              onPressed: () async {
-                // Delete stock item and pop back to previous screen
-                await _stockServices.deleteStock(stock.stockID ?? 'N/A');
-                Navigator.of(context).pop(); // Close the dialog
-                Navigator.of(context).popUntil((route) => route.isFirst); // Go back to previous screen (if you want to return to the stock list)
-              },
-              child: Text(AppLocalizations.of(context)!.delete),
-            ),
-          ],
-        );
-      },
-    );
-  }
+  // // Show delete confirmation dialog
+  // void _showDeleteConfirmationDialog(Stock stock) {
+  //   showDialog(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       return AlertDialog(
+  //         title: Text(AppLocalizations.of(context)!.confirmDelete),
+  //         content: Text(AppLocalizations.of(context)!.deleteConfirmationMessage),
+  //         actions: [
+  //           TextButton(
+  //             onPressed: () {
+  //               // Cancel action
+  //               Navigator.of(context).pop();
+  //             },
+  //             child: Text(AppLocalizations.of(context)!.cancel),
+  //           ),
+  //           TextButton(
+  //             onPressed: () async {
+  //               // Delete stock item and pop back to previous screen
+  //               await _stockServices.deleteStock(stock.stockID ?? 'N/A');
+  //               Navigator.of(context).pop(); // Close the dialog
+  //               Navigator.of(context).popUntil((route) => route.isFirst); // Go back to previous screen (if you want to return to the stock list)
+  //             },
+  //             child: Text(AppLocalizations.of(context)!.delete),
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
 }
