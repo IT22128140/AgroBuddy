@@ -51,11 +51,30 @@ class _LoginPageState extends State<LoginPage> {
       displayMessageToUser(e.code, context);
     }
   }
+  
+  //Forgot password method
+  void forgotPassword() async{
+    String email = emailController.text.trim();
+
+    if(email.isNotEmpty){
+      try {
+        await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+        //Display success message
+        displayMessageToUser(AppLocalizations.of(context)!.pw_reset_suc, context);
+      }on FirebaseAuthException catch (e) {
+        //Display error message
+        displayMessageToUser(e.code, context);
+      }
+    }else{
+      //Display error if email is empty
+      displayMessageToUser(AppLocalizations.of(context)!.pw_reset_err, context);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 40, 99, 31),
+      backgroundColor: Color.fromARGB(255, 40, 99, 31),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
@@ -65,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
               //sign in text
               Text(
                 AppLocalizations.of(context)!.login_name,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 40,
                   color: Color.fromARGB(255, 250, 230, 35),
                   fontWeight: FontWeight.bold,
@@ -96,9 +115,12 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    AppLocalizations.of(context)!.forgotpw_input,
-                    style: const TextStyle(color: Color.fromARGB(255, 250, 230, 35)),
+                  GestureDetector(
+                    onTap: forgotPassword,
+                    child: Text(
+                      AppLocalizations.of(context)!.forgotpw_input,
+                      style: TextStyle(color: Color.fromARGB(255, 250, 230, 35)),
+                    ),
                   ),
                 ],
               ),
@@ -119,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     AppLocalizations.of(context)!.no_acc,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Color.fromARGB(255, 250, 230, 35),
                     )
                   ),
@@ -127,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                     onTap: widget.onTap,
                     child: Text(
                       AppLocalizations.of(context)!.signup_btn,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
