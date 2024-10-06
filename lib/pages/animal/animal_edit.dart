@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:agro_buddy/services/database.dart';
@@ -20,6 +21,7 @@ class AnimalEdit extends StatefulWidget {
 class _AnimalAddState extends State<AnimalEdit> {
   //database service
   final DatabaseService databaseService = DatabaseService();
+  final User user = FirebaseAuth.instance.currentUser!;
 
   //text field controllers
   final TextEditingController nameController = TextEditingController();
@@ -81,17 +83,40 @@ class _AnimalAddState extends State<AnimalEdit> {
                             errorStyle: const TextStyle(
                                 color: Color.fromARGB(255, 250, 230, 35)),
                           ),
-                          items: <String>[
-                            AppLocalizations.of(context)!.cow,
-                            AppLocalizations.of(context)!.goat,
-                            AppLocalizations.of(context)!.chiken,
-                            AppLocalizations.of(context)!.pigs,
-                          ].map((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
+                          items: [
+                            DropdownMenuItem<String>(
+                                value: 'cattle',
+                                child:
+                                    Text(AppLocalizations.of(context)!.cattle)),
+                            DropdownMenuItem<String>(
+                                value: 'goat',
+                                child:
+                                    Text(AppLocalizations.of(context)!.goat)),
+                            DropdownMenuItem<String>(
+                                value: 'chicken',
+                                child: Text(
+                                    AppLocalizations.of(context)!.chicken)),
+                            DropdownMenuItem<String>(
+                                value: 'pigs',
+                                child:
+                                    Text(AppLocalizations.of(context)!.pigs)),
+                            DropdownMenuItem<String>(
+                                value: 'buffalo',
+                                child: Text(
+                                    AppLocalizations.of(context)!.buffalo)),
+                            DropdownMenuItem<String>(
+                                value: 'ducks',
+                                child:
+                                    Text(AppLocalizations.of(context)!.ducks)),
+                            DropdownMenuItem<String>(
+                                value: 'bees',
+                                child:
+                                    Text(AppLocalizations.of(context)!.bees)),
+                            DropdownMenuItem<String>(
+                                value: 'other',
+                                child:
+                                    Text(AppLocalizations.of(context)!.other)),
+                          ],
                           onChanged: (String? newvalue) {
                             setState(() {
                               typeController.text = newvalue!;
@@ -243,7 +268,7 @@ class _AnimalAddState extends State<AnimalEdit> {
                             await databaseService.updateAnimal(
                                 widget.id,
                                 Animal(
-                                    uid: '1234',
+                                    uid: user.uid,
                                     name: nameController.text,
                                     type: typeController.text,
                                     birthday:
@@ -257,7 +282,7 @@ class _AnimalAddState extends State<AnimalEdit> {
                             await Navigator.pushNamed(context, 'animal_profile',
                                 arguments: {
                                   'animal': Animal(
-                                      uid: '1234',
+                                      uid: user.uid,
                                       name: nameController.text,
                                       type: typeController.text,
                                       birthday: DateTime.parse(
