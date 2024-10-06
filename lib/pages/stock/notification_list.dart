@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:agro_buddy/components/my_drawer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:agro_buddy/components/upper_appbar.dart';
@@ -25,13 +26,14 @@ class _NotificationListState extends State<NotificationList> {
   void initState() {
     super.initState();
     _fetchStocks();
-
   }
 
   Future<void> _fetchStocks() async {
     // Fetch stocks expiring this week and next month
-    final stocksThisWeek = await _stockServices.getStocksExpiringThisWeek(user.uid);
-    final stocksNextMonth = await _stockServices.getStocksExpiringNextMonth(user.uid);
+    final stocksThisWeek =
+        await _stockServices.getStocksExpiringThisWeek(user.uid);
+    final stocksNextMonth =
+        await _stockServices.getStocksExpiringNextMonth(user.uid);
 
     print("Stocks Expiring This Week: ${stocksThisWeek.length}");
     print("Stocks Expiring Next Month: ${stocksNextMonth.length}");
@@ -46,6 +48,7 @@ class _NotificationListState extends State<NotificationList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: UpperAppBar(),
+      drawer: const MyDrawer(),
       backgroundColor: Color.fromARGB(255, 40, 99, 31),
       body: Column(
         children: [
@@ -78,50 +81,51 @@ class _NotificationListState extends State<NotificationList> {
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 10),
-                Expanded(child: _buildStockScrollView(_stocksExpiringNextMonth)),
+                Expanded(
+                    child: _buildStockScrollView(_stocksExpiringNextMonth)),
               ],
             ),
           ),
         ],
       ),
-      bottomNavigationBar: NavigationBarTheme(
-        data: NavigationBarThemeData(
-          indicatorColor: const Color(0xff28631f),
-          labelTextStyle: WidgetStateProperty.all(
-            const TextStyle(color: Color.fromARGB(255, 250, 230, 35)),
-          ),
-          iconTheme: WidgetStateProperty.all(
-            const IconThemeData(color: Color.fromARGB(255, 250, 230, 35)),
-          ),
-        ),
-        child: NavigationBar(
-          backgroundColor: const Color(0xff043e18),
-          selectedIndex: index,
-          onDestinationSelected: (selectedIndex) {
-            if (mounted) {
-              setState(() => index = selectedIndex);
-            }
-          },
-          destinations: [
-            NavigationDestination(
-              icon: Icon(Icons.description_outlined),
-              label: 'Records',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.timeline_outlined),
-              label: 'Forecast',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.inventory_outlined),
-              label: 'Stock',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.pets_outlined),
-              label: 'Animals',
-            ),
-          ],
-        ),
-      ),
+      // bottomNavigationBar: NavigationBarTheme(
+      //   data: NavigationBarThemeData(
+      //     indicatorColor: const Color(0xff28631f),
+      //     labelTextStyle: WidgetStateProperty.all(
+      //       const TextStyle(color: Color.fromARGB(255, 250, 230, 35)),
+      //     ),
+      //     iconTheme: WidgetStateProperty.all(
+      //       const IconThemeData(color: Color.fromARGB(255, 250, 230, 35)),
+      //     ),
+      //   ),
+      //   child: NavigationBar(
+      //     backgroundColor: const Color(0xff043e18),
+      //     selectedIndex: index,
+      //     onDestinationSelected: (selectedIndex) {
+      //       if (mounted) {
+      //         setState(() => index = selectedIndex);
+      //       }
+      //     },
+      //     destinations: [
+      //       NavigationDestination(
+      //         icon: Icon(Icons.description_outlined),
+      //         label: 'Records',
+      //       ),
+      //       NavigationDestination(
+      //         icon: Icon(Icons.timeline_outlined),
+      //         label: 'Forecast',
+      //       ),
+      //       NavigationDestination(
+      //         icon: Icon(Icons.inventory_outlined),
+      //         label: 'Stock',
+      //       ),
+      //       NavigationDestination(
+      //         icon: Icon(Icons.pets_outlined),
+      //         label: 'Animals',
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 
