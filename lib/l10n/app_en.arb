@@ -892,5 +892,17 @@
     "description":"Expiring Next Month",
     "type": "text",
     "placeholders": {}
+  },
+  "contact_btn": "Contact Us",
+  "@contact_btn": {
+    "description":"Contact Us",
+    "type": "text",
+    "placeholders": {}
+  },
+  "profit": "Profit",
+  "@profit": {
+    "description":"Profit",
+    "type": "text",
+    "placeholders": {}
   }
 }
