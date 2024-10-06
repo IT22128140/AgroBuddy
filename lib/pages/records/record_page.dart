@@ -62,7 +62,11 @@ class RecordPage extends StatelessWidget {
                 );
                 break;
               case 'show_charts':
-                page = const ShowCharts();
+                page = ShowCharts(
+                  totalIncome: (settings.arguments as Map<String, dynamic>)['totalIncome'] as double,
+                  totalExpense: (settings.arguments as Map<String, dynamic>)['totalExpense'] as double,
+                  total: (settings.arguments as Map<String, dynamic>)['total'] as double,
+                );
                 break;
             }
             return MaterialPageRoute(builder: (_) => page);
