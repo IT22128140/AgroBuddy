@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:agro_buddy/components/my_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:agro_buddy/components/upper_appbar.dart';
 import 'package:agro_buddy/pages/records/record_list.dart';
@@ -23,7 +24,8 @@ class RecordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const UpperAppBar(),
+      appBar: UpperAppBar(),
+      drawer: const MyDrawer(),
       body: WillPopScope(
         onWillPop: () async {
           if (navigatorKey.currentState?.canPop() ?? false) {
