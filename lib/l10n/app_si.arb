@@ -424,5 +424,98 @@
       "description": "පිටවීම",
       "type": "text",
       "placeholders": {}
+  },
+
+
+  "type": "වර්ගය",
+  "@type": {
+    "description": "වර්ගය",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "purchasedDate": "මිලදී ගත් දිනය",
+  "@purchasedDate": {
+    "description": "මිලදී ගත් දිනය",
+    "type": "text",
+    "placeholders": {}
+  },
+
+
+  "expDate": "කල් ඉකුත් වන දිනය",
+  "@expDate": {
+    "description": "කල් ඉකුත් වන දිනය",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "purchasedPrice": "මිල",
+  "@purchasedPrice": {
+    "description": "මිල",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "supplier": "සැපයුම්කරු",
+  "@supplier": {
+    "description": "සැපයුම්කරු",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "additionalNotes": "අමතර සටහන්",
+  "@additionalNotes": {
+    "description": "අමතර සටහන්",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "stockID": "තොග හැඳුනුම",
+  "@stockID": {
+    "description": "තොග හැඳුනුම",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "stockName": "නම",
+  "@stockName": {
+    "description": "නම",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "noData": "තොග නොමැත",
+  "@noData": {
+    "description": "තොග නොමැත",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "confirmDelete": "ඔබට මෙම වාර්තාව මැකීමට අවශ්‍ය බව විශ්වාසද?",
+  "@confirmDelete": {
+    "description":"ඔබට මෙම වාර්තාව මැකීමට අවශ්‍ය බව විශ්වාසද?",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "deleteConfirmationMessage": "ඔබට මෙම ක්‍රියාව පසුගමනය කළ නොහැක.",
+  "@deleteConfirmationMessage": {
+    "description":"ඔබට මෙම ක්‍රියාව පසුගමනය කළ නොහැක.",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "expThisWeek": "මෙම සතියේ කල් ඉකුත් වේ",
+  "@expThisWeek": {
+    "description":"මෙම සතියේ කල් ඉකුත් වේ",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "expNextMonth": "ලබන මස කල් ඉකුත් වේ",
+  "@expNextMonth": {
+    "description":"ලබන මස කල් ඉකුත් වේ",
+    "type": "text",
+    "placeholders": {}
   }
 }

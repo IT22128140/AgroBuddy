@@ -9,7 +9,7 @@ class RecordsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff28631f),
-      appBar: const UpperAppBar(),
+      appBar: UpperAppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

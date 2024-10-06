@@ -24,7 +24,7 @@ class AnimalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const UpperAppBar(),
+      appBar: UpperAppBar(),
       drawer: const MyDrawer(),
       body: WillPopScope(
         onWillPop: () async {
