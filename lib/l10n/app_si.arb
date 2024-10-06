@@ -301,127 +301,505 @@
   },
   "login_name": "ආයුබෝවන් පුරන්න",
   "@login_name": {
-      "description": "පුරන්න මාතෘකාව",
-      "type": "text",
-      "placeholders": {}
+    "description": "පුරන්න මාතෘකාව",
+    "type": "text",
+    "placeholders": {}
   },
   "email_input": "විද්‍යුත් තැපෑල",
   "@email_input": {
-      "description": "විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "pw_input": "මුරපදය",
   "@pw_input": {
-      "description": "මුරපදය ඇතුලත් කරන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "මුරපදය ඇතුලත් කරන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "forgotpw_input": "මුරපදය අමතක ද?",
   "@forgotpw_input": {
-      "description": "මුරපදය අමතක ද?",
-      "type": "text",
-      "placeholders": {}
+    "description": "මුරපදය අමතක ද?",
+    "type": "text",
+    "placeholders": {}
   },
   "signin_btn": "පුරන්න",
   "@signin_btn": {
-      "description": "පුරන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "පුරන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "no_acc": "මා හට ගිණුමක් නැත?",
   "@no_acc": {
-      "description": "මා හට ගිණුමක් නැත?",
-      "type": "text",
-      "placeholders": {}
+    "description": "මා හට ගිණුමක් නැත?",
+    "type": "text",
+    "placeholders": {}
   },
   "signup_btn": "ලියාපදිංචි වන්න",
   "@signup_btn": {
-      "description": "ලියාපදිංචි වන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "ලියාපදිංචි වන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "pw_mismatch": "මුරපද එකිනෙකට නොගැලපේ!",
   "@pw_mismatch": {
-      "description": "මුරපද එකිනෙකට නොගැලපේ",
-      "type": "text",
-      "placeholders": {}
+    "description": "මුරපද එකිනෙකට නොගැලපේ",
+    "type": "text",
+    "placeholders": {}
   },
   "signup_text": "ඔබේ ගිණුම නිර්මාණය කරන්න",
   "@signup_text": {
-      "description": "ඔබේ ගිණුම නිර්මාණය කරන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "ඔබේ ගිණුම නිර්මාණය කරන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "username_input": "පරිශීලක නාමය",
   "@username_input": {
-      "description": "පරිශීලක නාමය ඇතුලත් කරන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "පරිශීලක නාමය ඇතුලත් කරන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "conpw_input": "මුරපදය තහවුරු කරන්න",
   "@conpw_input": {
-      "description": "මුරපදය තහවුරු කරන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "මුරපදය තහවුරු කරන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "yes_acc": "දැනටමත් ගිණුමක් ඇත?",
   "@yes_acc": {
-      "description": "දැනටමත් ගිණුමක් ඇත?",
-      "type": "text",
-      "placeholders": {}
+    "description": "දැනටමත් ගිණුමක් ඇත?",
+    "type": "text",
+    "placeholders": {}
   },
   "harvest_imp": "වැදගත්",
   "@harvest_imp": {
-      "description": "වැදගත්",
-      "type": "text",
-      "placeholders": {}
+    "description": "වැදගත්",
+    "type": "text",
+    "placeholders": {}
   },
   "harvest_imp_text": "තාක්ෂණික, ජීව විද්‍යාත්මක සහ පාරිසරික සාධක හේතුවෙන් පුරෝකථනය කරන ලද අස්වැන්න වෙනස් විය හැක.",
   "@harvest_imp_text": {
-      "description": "වැදගත් පාඨය",
-      "type": "text",
-      "placeholders": {}
+    "description": "වැදගත් පාඨය",
+    "type": "text",
+    "placeholders": {}
   },
   "st_yield": "සම්මත අස්වැන්න (අක්කරයට කිලෝ ග්‍රෑම්)",
   "@st_yield": {
-      "description": "සම්මත අස්වැන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "සම්මත අස්වැන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "cult_area": "වගා බිම් ප්‍රමාණය (අක්කර)",
   "@cult_area": {
-      "description": "වගා බිම් ප්‍රමාණය",
-      "type": "text",
-      "placeholders": {}
+    "description": "වගා බිම් ප්‍රමාණය",
+    "type": "text",
+    "placeholders": {}
   },
   "last_yield": "පසුගිය සමයේ අස්වැන්න (අක්කරයට කිලෝ ග්‍රෑම්)",
   "@last_yield": {
-      "description": "පසුගිය සමයේ අස්වැන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "පසුගිය සමයේ අස්වැන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "cast_harv": "පුරෝකථනය කරන ලද අස්වැන්න",
   "@cast_harv": {
-      "description": "පුරෝකථනය කරන ලද අස්වැන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "පුරෝකථනය කරන ලද අස්වැන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "amount_kg": "කිලෝ ග්‍රෑම්",
   "@amount_kg": {
-      "description": "ප්‍රමාණය",
-      "type": "text",
-      "placeholders": {}
+    "description": "ප්‍රමාණය",
+    "type": "text",
+    "placeholders": {}
   },
   "calc_btn": "ගණනය කරන්න",
   "@calc_btn": {
-      "description": "ගණනය කරන්න",
-      "type": "text",
-      "placeholders": {}
+    "description": "ගණනය කරන්න",
+    "type": "text",
+    "placeholders": {}
   },
   "logout_btn": "පිටවීම",
   "@logout_btn": {
-      "description": "පිටවීම",
+    "description": "පිටවීම",
+    "type": "text",
+    "placeholders": {}
+  },
+  "income": "ආදායම",
+  "@income": {
+    "description": "ආදායම",
+    "type": "text",
+    "placeholders": {}
+  },
+  "expense": "වියදම",
+  "@expense": {
+    "description": "වියදම",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t_err": "කරුණාකර ගිණුම් වර්ගයක් තෝරන්න",
+  "@acc_t_err": {
+    "description": "කරුණාකර ගිණුම් වර්ගයක් තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t": "ගිණුම් වර්ගය තෝරන්න",
+  "@acc_t": {
+    "description": "ගිණුම් වර්ගය තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t_cash": "මුදල්",
+  "@acc_t_cash": {
+    "description": "මුදල්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t_bank": "බැංකු කාඩ්පත",
+  "@acc_t_bank": {
+    "description": "බැංකු කාඩ්පත",
+    "type": "text",
+    "placeholders": {}
+  },
+  "acc_t_loan": "ණය",
+  "@acc_t_loan": {
+    "description": "ණය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cate_err": "කරුණාකර කාණ්ඩයක් තෝරන්න",
+  "@cate_err": {
+    "description": "කරුණාකර කාණ්ඩයක් තෝරන්න",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate": "කාණ්ඩය තෝරන්න",
+  "@cate": {
+    "description": "කාණ්ඩය තෝරන්න",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_capital": "ප්‍රාග්ධනය",
+  "@cate_capital": {
+    "description": "ප්‍රාග්ධනය",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_harvest": "අස්වැන්න",
+  "@cate_harvest": {
+    "description": "අස්වැන්න",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_eggs": "බිත්තර",
+  "@cate_eggs": {
+    "description": "බිත්තර",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_milk": "කිරි",
+  "@cate_milk": {
+    "description": "කිරි",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_meat": "මස්",
+  "@cate_meat": {
+    "description": "මස්",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_honey": "මී පැණි",
+  "@cate_honey": {
+    "description": "මී පැණි",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_seeds": "බීජ",
+  "@cate_seeds": {
+    "description": "බීජ",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_fertilizer": "පොහොර",
+  "@cate_fertilizer": {
+    "description": "පොහොර",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_pesticide": "කෘමි නාශක",
+  "@cate_pesticide": {
+    "description": "කෘමි නාශක",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_animalfeed": "සත්ව ආහාර",
+  "@cate_animalfeed": {
+    "description": "සත්ව ආහාර",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_vetdrugs": "පශු ඖශධ",
+  "@cate_vetdrugs": {
+    "description": "පශු ඖශධ",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_labor": "ශ්‍රමය",
+  "@cate_labor": {
+    "description": "ශ්‍රමය",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_machine": "යන්ත්‍ර අළුත්වැඩියා",
+  "@cate_machine": {
+    "description": "යන්ත්‍ර අළුත්වැඩියා",
+    "type": "text",
+    "placeholder": {}
+  },
+  "cate_rent": "කුලිය",
+  "@cate_rent": {
+    "description": "කුලිය",
+    "type": "text",
+    "placeholder": {}
+  },
+  "amount_err": "කරුණාකර මුදල ඇතුළත් කරන්න",
+  "@amount_err": {
+    "description": "කරුණාකර මුදල ඇතුළත් කරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "amount": "මුදල ඇතුළත් කරන්න (රු.)",
+  "@amount": {
+    "description": "මුදල ඇතුළත් කරන්න (රු.)",
+    "type": "text",
+    "placeholder": {}
+  },
+  "sel_date_err": "කරුණාකර දිනයක් තෝරන්න",
+  "@sel_date_err": {
+    "description": "කරුණාකර දිනයක් තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_date": "දිනය තෝරන්න",
+  "@sel_date": {
+    "description": "දිනය තෝරන්න",
+    "type": "text",
+    "placeholder": {}
+  },
+  "sel_time_err": "කරුණාකර කාලයක් තෝරන්න",
+  "@sel_time_err": {
+    "description": "කරුණාකර කාලයක් තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_time": "කාලය තෝරන්න",
+  "@sel_time": {
+    "description": "කාලය තෝරන්න",
+    "type": "text",
+    "placeholder": {}
+  },
+  "add_notes": "සටහනක් යොදන්න",
+  "@add_notes": {
+    "description": "සටහනක් යොදන්න",
+    "type": "text",
+    "placeholder": {}
+  },
+  "sel_type_err": "කරුණාකර වර්ගයක් තෝරන්න",
+  "@sel_type_err": {
+    "description": "කරුණාකර වර්ගයක් තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_type": "වර්ගය තෝරන්න",
+  "@sel_type": {
+    "description": "වර්ගය තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "total_s": "එකතුව : ",
+  "@total_s": {
+    "description": "එකතුව : ",
+    "type": "text",
+    "placeholders": {}
+  },
+  "rs": "රු.",
+  "@rs": {
+    "description": "රු.",
+    "type": "text",
+    "placeholders": {}
+  },
+  "show_ill": "රූප සටහන් පෙන්වන්න",
+  "@show_ill": {
+    "description": "රූප සටහන් පෙන්වන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_trange": "කාල පරාසය තෝරන්න",
+  "@sel_trange": {
+    "description": "කාල පරාසය තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sel_trange_err": "කරුණාකර කාල පරාසයක් තෝරන්න",
+  "@sel_trange_err": {
+    "description": "කරුණාකර කාල පරාසයක් තෝරන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tr_year": "වාර්ෂිකව",
+  "@tr_year": {
+    "description": "වාර්ෂිකව",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tr_month": "මාසිකව",
+  "@tr_month": {
+    "description": "මාසිකව",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tr_sixm": "මාස 6 ක්",
+  "@tr_sixm": {
+    "description": "මාස 6 ක්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "january": "ජනවාරි",
+  "@january": {
+    "description": "ජනවාරි",
+    "type": "text",
+    "placeholders": {}
+  },
+  "february": "පෙබරවාරි",
+  "@february": {
+    "description": "පෙබරවාරි",
+    "type": "text",
+    "placeholders": {}
+  },
+  "march": "මාර්තු",
+  "@march": {
+    "description": "මාර්තු",
+    "type": "text",
+    "placeholders": {}
+  },
+  "april": "අප්‍රේල්",
+  "@april": {
+    "description": "අප්‍රේල්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "may": "මැයි",
+  "@may": {
+    "description": "මැයි",
+    "type": "text",
+    "placeholders": {}
+  },
+  "june": "ජූනි",
+  "@june": {
+    "description": "ජූනි",
+    "type": "text",
+    "placeholders": {}
+  },
+  "july": "ජූලි",
+  "@july": {
+    "description": "ජූලි",
+    "type": "text",
+    "placeholders": {}
+  },
+  "august": "අගෝස්තු",
+  "@august": {
+    "description": "අගෝස්තු",
+    "type": "text",
+    "placeholders": {}
+  },
+  "september": "සැප්තැම්බර්",
+  "@september": {
+    "description": "සැප්තැම්බර්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "october": "ඔක්තෝබර්",
+  "@october": {
+    "description": "ඔක්තෝබර්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "november": "නොවැම්බර්",
+  "@november": {
+    "description": "නොවැම්බර්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "december": "දෙසැම්බර්",
+  "@december": {
+    "description": "දෙසැම්බර්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "date_rv": "දිනය",
+  "@date_rv": {
+    "description": "දිනය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "time_rv": "වේලාව",
+  "@time_rv": {
+    "description": "වේලාව",
+    "type": "text",
+    "placeholders": {}
+  },
+  "type_rv": "වර්ගය",
+  "@type_rv": {
+    "description": "වර්ගය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "account_rv": "ගිණුම් වර්ගය",
+  "@account_rv": {
+    "description": "ගිණුම් වර්ගය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "category_rv": "කාණ්ඩය",
+  "@category_rv": {
+    "description": "කාණ්ඩය",
+    "type": "text",
+    "placeholders": {}
+  },
+  "amount_rv": "මුදල",
+  "@amount_rv": {
+    "description": "මුදල",
+    "type": "text",
+    "placeholders": {}
+  },
+  "note_rv": "සටහන්",
+  "@note_rv": {
+    "description": "සටහන්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "jan_jun": "ජනවාරි - ජූනි",
+  "@jan_jun": {
+    "description": "ජනවාරි - ජූනි",
+    "type": "text",
+    "placeholders": {}
+  },
+  "jul_dec": "ජූලි - දෙසැම්බර්",
+  "@jul_dec": {
+    "description": "ජූලි - දෙසැම්බර්",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pw_reset_suc": "විද්‍යුත් තැපෑල පිරික්සන්න",
+  "@pw_reset_suc": {
+      "description": "විද්‍යුත් තැපෑල පිරික්සන්න",
+      "type": "text",
+      "placeholders": {}
+  },
+  "pw_reset_err": "නිවැරදි විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
+  "@pw_reset_err": {
+      "description": "නිවැරදි විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
       "type": "text",
       "placeholders": {}
   }
