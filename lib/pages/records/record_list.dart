@@ -405,8 +405,27 @@ class _RecordListState extends State<RecordList> {
                 children: [
                   MyButton(
                     text: AppLocalizations.of(context)!.show_ill,
-                    onTap: () {
-                      Navigator.pushNamed(context, 'show_charts');
+                    onTap: () async {
+                      final snapshot = await databaseService.getFilteredRecordsStream(
+                        timeRange: selectedTimeRange,
+                        selectedTime: selectedTime,
+                        uid: user.uid
+                      ).first;
+                      final docs = snapshot.docs;
+                      final totalIncome = calculateIncome(docs);
+                      final totalExpense = calculateExpense(docs);
+                      final total = calculateTotal(docs);
+                      
+                      // Navigate to ShowCharts with the calculated data
+                      Navigator.pushNamed(
+                        context,
+                        'show_charts',
+                        arguments: {
+                          'totalIncome': totalIncome,
+                          'totalExpense': totalExpense,
+                          'total': total,
+                        },
+                      );
                     },
                   ),
                 ],
