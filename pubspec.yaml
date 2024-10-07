@@ -48,3 +48,4 @@ flutter:
     - lib\resources\icons\income.svg
     - lib\resources\icons\expense.svg
     - lib\resources\icons\profit.svg
+    - lib\resources\images\logo2.png

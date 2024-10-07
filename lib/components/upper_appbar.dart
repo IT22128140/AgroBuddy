@@ -23,7 +23,7 @@ class _UpperAppBarState extends State<UpperAppBar> {
 
   List<Stock> _stocksExpiringNextMonth = [];
 
-    @override
+  @override
   void initState() {
     super.initState();
     _fetchStocks();
@@ -31,8 +31,10 @@ class _UpperAppBarState extends State<UpperAppBar> {
 
   Future<void> _fetchStocks() async {
     // Fetch stocks expiring this week and next month
-    final stocksThisWeek = await _stockServices.getStocksExpiringThisWeek(user.uid);
-    final stocksNextMonth = await _stockServices.getStocksExpiringNextMonth(user.uid);
+    final stocksThisWeek =
+        await _stockServices.getStocksExpiringThisWeek(user.uid);
+    final stocksNextMonth =
+        await _stockServices.getStocksExpiringNextMonth(user.uid);
 
     print("Stocks Expiring This Week: ${stocksThisWeek.length}");
     print("Stocks Expiring Next Month: ${stocksNextMonth.length}");
@@ -61,13 +63,14 @@ class _UpperAppBarState extends State<UpperAppBar> {
         IconButton(
           icon: Icon(
             Icons.notifications,
-            color: (_stocksExpiringThisWeek.isNotEmpty || _stocksExpiringNextMonth.isNotEmpty)
-          ? Colors.red
-          : const Color.fromARGB(255, 250, 230, 35),
+            color: (_stocksExpiringThisWeek.isNotEmpty ||
+                    _stocksExpiringNextMonth.isNotEmpty)
+                ? Colors.red
+                : const Color.fromARGB(255, 250, 230, 35),
           ),
           onPressed: () {
             Navigator.push(context,
-          MaterialPageRoute(builder: (context) => NotificationList()));
+                MaterialPageRoute(builder: (context) => NotificationList()));
           },
         ),
       ],
@@ -77,6 +80,5 @@ class _UpperAppBarState extends State<UpperAppBar> {
     );
   }
 
-  @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

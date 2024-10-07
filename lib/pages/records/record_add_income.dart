@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:agro_buddy/models/record.dart';
 import 'package:agro_buddy/services/database_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart';
 
 class RecordAddIncome extends StatefulWidget {
   const RecordAddIncome({super.key});
@@ -98,16 +99,23 @@ class _RecordAddIncomeState extends State<RecordAddIncome> {
                                   color: Color.fromARGB(255, 250, 230, 35),
                                 ),
                               ),
-                              items: <String>[
-                                AppLocalizations.of(context)!.acc_t_cash,
-                                AppLocalizations.of(context)!.acc_t_bank,
-                                AppLocalizations.of(context)!.acc_t_loan,
-                              ].map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
+                              items: [
+                                DropdownMenuItem(
+                                  value: 'cash',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_cash),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'bank',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_bank),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'loan',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_loan),
+                                ),
+                              ],
                               onChanged: (String? newvalue) {
                                 setState(() {
                                   accountController.text = newvalue!;
@@ -134,19 +142,38 @@ class _RecordAddIncomeState extends State<RecordAddIncome> {
                                   color: Color.fromARGB(255, 250, 230, 35),
                                 ),
                               ),
-                              items: <String>[
-                                AppLocalizations.of(context)!.cate_capital,
-                                AppLocalizations.of(context)!.cate_harvest,
-                                AppLocalizations.of(context)!.cate_eggs,
-                                AppLocalizations.of(context)!.cate_milk,
-                                AppLocalizations.of(context)!.cate_meat,
-                                AppLocalizations.of(context)!.cate_honey,
-                              ].map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
+                              items: [
+                                DropdownMenuItem<String>(
+                                  value: 'capital',
+                                  child: Text(AppLocalizations.of(context)!
+                                      .cate_capital),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'harvest',
+                                  child: Text(AppLocalizations.of(context)!
+                                      .cate_harvest),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'eggs',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.cate_eggs),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'milk',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.cate_milk),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'meat',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.cate_meat),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'honey',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.cate_honey),
+                                ),
+                              ],
                               onChanged: (String? newvalue) {
                                 setState(() {
                                   categoryController.text = newvalue!;
@@ -263,9 +290,19 @@ class _RecordAddIncomeState extends State<RecordAddIncome> {
                                 },
                               );
                               if (pickedTime != null) {
+                                // Convert the pickedTime to 24-hour format
+                                final now = DateTime.now();
+                                final dt = DateTime(
+                                    now.year,
+                                    now.month,
+                                    now.day,
+                                    pickedTime.hour,
+                                    pickedTime.minute);
+                                final formattedTime = DateFormat.Hm()
+                                    .format(dt); // 24-hour format
+
                                 setState(() {
-                                  timeController.text =
-                                      pickedTime.format(context);
+                                  timeController.text = formattedTime;
                                 });
                               }
                             },
