@@ -153,7 +153,7 @@ class _NotificationListState extends State<NotificationList> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "${AppLocalizations.of(context)!.stockID}           :${stock.stockID}",
+                "${AppLocalizations.of(context)!.stockID} :${stock.stockID}",
                 style: TextStyle(fontSize: 16),
               ),
               Text(
@@ -161,7 +161,7 @@ class _NotificationListState extends State<NotificationList> {
                 style: TextStyle(fontSize: 16),
               ),
               Text(
-                "${AppLocalizations.of(context)!.stockName}                              :${stock.stockName}",
+                "${AppLocalizations.of(context)!.stockName}:${stock.stockName}",
                 style: TextStyle(fontSize: 16),
               ),
             ],
