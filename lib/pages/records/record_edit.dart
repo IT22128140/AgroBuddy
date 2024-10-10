@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:agro_buddy/models/record.dart';
@@ -17,20 +15,17 @@ class RecordEdit extends StatefulWidget {
 }
 
 class _RecordEditState extends State<RecordEdit> {
+  final user = FirebaseAuth.instance.currentUser!;
   final DatabaseService databaseService = DatabaseService();
-  final User user = FirebaseAuth.instance.currentUser!;
+  List<DropdownMenuItem<String>> _categories = [];
 
-  TextEditingController typeController = TextEditingController();
-  TextEditingController accountController = TextEditingController();
-  TextEditingController categoryController = TextEditingController();
-  TextEditingController amountController = TextEditingController();
-  TextEditingController dateController = TextEditingController();
-  TextEditingController timeController = TextEditingController();
-  TextEditingController notesController = TextEditingController();
-
-  List<String> _categories = [];
-  List<String> _incomeCategories = [];
-  List<String> _expenseCategories = [];
+  final TextEditingController typeController = TextEditingController();
+  final TextEditingController accountController = TextEditingController();
+  final TextEditingController categoryController = TextEditingController();
+  final TextEditingController amountController = TextEditingController();
+  final TextEditingController dateController = TextEditingController();
+  final TextEditingController timeController = TextEditingController();
+  final TextEditingController notesController = TextEditingController();
 
   DateTime get toUTC => DateTime(
       dateController.text.isNotEmpty
@@ -71,40 +66,81 @@ class _RecordEditState extends State<RecordEdit> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-
-    _incomeCategories = [
-      AppLocalizations.of(context)!.cate_capital,
-      AppLocalizations.of(context)!.cate_harvest,
-      AppLocalizations.of(context)!.cate_eggs,
-      AppLocalizations.of(context)!.cate_milk,
-      AppLocalizations.of(context)!.cate_meat,
-      AppLocalizations.of(context)!.cate_honey,
-    ];
-
-    _expenseCategories = [
-      AppLocalizations.of(context)!.cate_seeds,
-      AppLocalizations.of(context)!.cate_fertilizer,
-      AppLocalizations.of(context)!.cate_pesticide,
-      AppLocalizations.of(context)!.cate_animalfeed,
-      AppLocalizations.of(context)!.cate_vetdrugs,
-      AppLocalizations.of(context)!.cate_labor,
-      AppLocalizations.of(context)!.cate_machine,
-      AppLocalizations.of(context)!.cate_rent,
-    ];
-
-    _updateCategories(typeController.text);
+    _updateCategories(widget.record.type);
   }
 
-  void _updateCategories(String type) {
+  List<DropdownMenuItem<String>> _updateCategories(String type) {
+    List<DropdownMenuItem<String>> incomeCategories = [
+      DropdownMenuItem<String>(
+        value: 'capital',
+        child: Text(AppLocalizations.of(context)!.cate_capital),
+      ),
+      DropdownMenuItem<String>(
+        value: 'harvest',
+        child: Text(AppLocalizations.of(context)!.cate_harvest),
+      ),
+      DropdownMenuItem<String>(
+        value: 'eggs',
+        child: Text(AppLocalizations.of(context)!.cate_eggs),
+      ),
+      DropdownMenuItem(
+        value: 'milk',
+        child: Text(AppLocalizations.of(context)!.cate_milk),
+      ),
+      DropdownMenuItem(
+        value: 'meat',
+        child: Text(AppLocalizations.of(context)!.cate_meat),
+      ),
+      DropdownMenuItem(
+        value: 'honey',
+        child: Text(AppLocalizations.of(context)!.cate_honey),
+      )
+    ];
+
+    List<DropdownMenuItem<String>> expenseCategories = [
+      DropdownMenuItem<String>(
+        value: 'seeds',
+        child: Text(AppLocalizations.of(context)!.cate_seeds),
+      ),
+      DropdownMenuItem<String>(
+        value: 'fertilizer',
+        child: Text(AppLocalizations.of(context)!.cate_fertilizer),
+      ),
+      DropdownMenuItem<String>(
+        value: 'pesticide',
+        child: Text(AppLocalizations.of(context)!.cate_pesticide),
+      ),
+      DropdownMenuItem(
+        value: 'animalfeed',
+        child: Text(AppLocalizations.of(context)!.cate_animalfeed),
+      ),
+      DropdownMenuItem(
+        value: 'vetdrugs',
+        child: Text(AppLocalizations.of(context)!.cate_vetdrugs),
+      ),
+      DropdownMenuItem(
+        value: 'labor',
+        child: Text(AppLocalizations.of(context)!.cate_labor),
+      ),
+      DropdownMenuItem(
+        value: 'machine',
+        child: Text(AppLocalizations.of(context)!.cate_machine),
+      ),
+      DropdownMenuItem(
+        value: 'rent',
+        child: Text(AppLocalizations.of(context)!.cate_rent),
+      )
+    ];
+
     setState(() {
       if (type == 'Income') {
-        _categories = _incomeCategories;
+        _categories = incomeCategories;
       } else if (type == 'Expense') {
-        _categories = _expenseCategories;
-      } else {
-        _categories = [];
+        _categories = expenseCategories;
       }
     });
+
+    return _categories;
   }
 
   bool _isUploading = false;
@@ -130,38 +166,40 @@ class _RecordEditState extends State<RecordEdit> {
                         SizedBox(
                           width: 350,
                           child: DropdownButtonFormField<String>(
-                              value: typeController.text.isNotEmpty
-                                  ? typeController.text
-                                  : null,
-                              validator: (String? value) {
-                                if (value == null) {
-                                  return AppLocalizations.of(context)!
-                                      .sel_type_err;
-                                }
-                                return null;
-                              },
-                              dropdownColor: Colors.white,
-                              decoration: InputDecoration(
-                                labelText:
-                                    AppLocalizations.of(context)!.sel_type,
-                                border: const UnderlineInputBorder(),
-                                filled: true,
-                                fillColor: Colors.white,
-                              ),
-                              items: [
-                                DropdownMenuItem<String>(
-                                    value: 'Income',
-                                    child: Text(
-                                        AppLocalizations.of(context)!.income)),
-                                DropdownMenuItem<String>(
-                                    value: 'Expense',
-                                    child: Text(
-                                        AppLocalizations.of(context)!.expense)),
-                              ],
-                              onChanged: (String? newvalue) {
+                            value: typeController.text.isNotEmpty
+                                ? typeController.text
+                                : null,
+                            validator: (String? value) {
+                              if (value == null) {
+                                return AppLocalizations.of(context)!
+                                    .sel_type_err;
+                              }
+                              return null;
+                            },
+                            dropdownColor: Colors.white,
+                            decoration: InputDecoration(
+                              labelText: AppLocalizations.of(context)!.sel_type,
+                              border: const UnderlineInputBorder(),
+                              filled: true,
+                              fillColor: Colors.white,
+                            ),
+                            items: [
+                              DropdownMenuItem<String>(
+                                  value: 'Income',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.income)),
+                              DropdownMenuItem<String>(
+                                  value: 'Expense',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.expense)),
+                            ],
+                            onChanged: (String? newvalue) async {
+                              setState(() {
                                 typeController.text = newvalue!;
                                 _updateCategories(newvalue);
-                              }),
+                              });
+                            },
+                          ),
                         ),
                         const SizedBox(height: 20),
                         SizedBox(
@@ -182,16 +220,23 @@ class _RecordEditState extends State<RecordEdit> {
                                 filled: true,
                                 fillColor: Colors.white,
                               ),
-                              items: <String>[
-                                AppLocalizations.of(context)!.acc_t_cash,
-                                AppLocalizations.of(context)!.acc_t_bank,
-                                AppLocalizations.of(context)!.acc_t_loan,
-                              ].map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
+                              items: [
+                                DropdownMenuItem(
+                                  value: 'cash',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_cash),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'bank',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_bank),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'loan',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_loan),
+                                ),
+                              ],
                               onChanged: (String? newvalue) {
                                 accountController.text = newvalue!;
                               }),
@@ -200,32 +245,30 @@ class _RecordEditState extends State<RecordEdit> {
                         SizedBox(
                           width: 350,
                           child: DropdownButtonFormField<String>(
-                              value:
-                                  _categories.contains(categoryController.text)
-                                      ? categoryController.text
-                                      : null,
-                              validator: (String? value) {
-                                if (value == null) {
-                                  return AppLocalizations.of(context)!.cate_err;
-                                }
-                                return null;
-                              },
-                              dropdownColor: Colors.white,
-                              decoration: InputDecoration(
-                                labelText: AppLocalizations.of(context)!.cate,
-                                border: const UnderlineInputBorder(),
-                                filled: true,
-                                fillColor: Colors.white,
-                              ),
-                              items: _categories.map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
-                              onChanged: (String? newvalue) {
+                            value: (_categories.any((item) =>
+                                    item.value == categoryController.text))
+                                ? categoryController.text
+                                : null,
+                            validator: (String? value) {
+                              if (value == null) {
+                                return AppLocalizations.of(context)!.cate_err;
+                              }
+                              return null;
+                            },
+                            dropdownColor: Colors.white,
+                            decoration: InputDecoration(
+                              labelText: AppLocalizations.of(context)!.cate,
+                              border: const UnderlineInputBorder(),
+                              filled: true,
+                              fillColor: Colors.white,
+                            ),
+                            items: _categories,
+                            onChanged: (String? newvalue) {
+                              setState(() {
                                 categoryController.text = newvalue ?? '';
-                              }),
+                              });
+                            },
+                          ),
                         ),
                         const SizedBox(height: 20),
                         SizedBox(
@@ -288,41 +331,60 @@ class _RecordEditState extends State<RecordEdit> {
                         SizedBox(
                           width: 350,
                           child: TextFormField(
-                            controller: timeController,
-                            decoration: InputDecoration(
-                              labelText: AppLocalizations.of(context)!.sel_time,
-                              suffixIcon: Icon(Icons.access_time),
-                              border: const UnderlineInputBorder(),
-                              filled: true,
-                              fillColor: Colors.white,
-                            ),
-                            readOnly: true,
-                            onTap: () async {
-                              TimeOfDay? pickedTime = await showTimePicker(
-                                context: context,
-                                initialTime: TimeOfDay.now(),
-                                builder: (BuildContext context, Widget? child) {
-                                  return Theme(
-                                    data: ThemeData.light().copyWith(
-                                      colorScheme: ColorScheme.light(
-                                        primary: const Color(0xff28631f),
-                                        onPrimary: Colors.white,
-                                        onSurface: Colors.black,
+                              controller: timeController,
+                              decoration: InputDecoration(
+                                labelText:
+                                    AppLocalizations.of(context)!.sel_time,
+                                suffixIcon: Icon(Icons.access_time),
+                                border: const UnderlineInputBorder(),
+                                filled: true,
+                                fillColor: Colors.white,
+                              ),
+                              readOnly: true,
+                              onTap: () async {
+                                TimeOfDay? pickedTime = await showTimePicker(
+                                  context: context,
+                                  initialTime: TimeOfDay(
+                                    hour: int.parse(
+                                        timeController.text.split(":")[0]),
+                                    minute: int.parse(
+                                        timeController.text.split(":")[1]),
+                                  ),
+                                  builder:
+                                      (BuildContext context, Widget? child) {
+                                    return MediaQuery(
+                                      data: MediaQuery.of(context).copyWith(
+                                          alwaysUse24HourFormat: true),
+                                      child: Theme(
+                                        data: ThemeData.light().copyWith(
+                                          colorScheme: ColorScheme.light(
+                                            primary: const Color(0xff28631f),
+                                            onPrimary: Colors.white,
+                                            onSurface: Colors.black,
+                                          ),
+                                          dialogBackgroundColor: Colors.white,
+                                        ),
+                                        child: child!,
                                       ),
-                                      dialogBackgroundColor: Colors.white,
-                                    ),
-                                    child: child!,
-                                  );
-                                },
-                              );
-                              if (pickedTime != null) {
-                                setState(() {
-                                  timeController.text =
-                                      pickedTime.format(context);
-                                });
-                              }
-                            },
-                          ),
+                                    );
+                                  },
+                                );
+                                if (pickedTime != null) {
+                                  final now = DateTime.now();
+                                  final dt = DateTime(
+                                      now.year,
+                                      now.month,
+                                      now.day,
+                                      pickedTime.hour,
+                                      pickedTime.minute);
+                                  final formattedTime =
+                                      DateFormat.Hm().format(dt);
+
+                                  setState(() {
+                                    timeController.text = formattedTime;
+                                  });
+                                }
+                              }),
                         ),
                         const SizedBox(height: 20),
                         SizedBox(

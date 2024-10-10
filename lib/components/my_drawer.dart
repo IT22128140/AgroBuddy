@@ -42,7 +42,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
               // Language settings
               Padding(
-                padding: const EdgeInsets.only(left: 75.0),
+                padding: const EdgeInsets.only(left: 10.0, right: 70.0),
                 child: ListTile(
                   leading: Icon(
                     Icons.language,
@@ -73,6 +73,27 @@ class _MyDrawerState extends State<MyDrawer> {
                   ),
                 ),
               ),
+
+              //contact us button
+              Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      AppLocalizations.of(context)!.contact_btn,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      //pop drawer
+                      Navigator.pop(context);
+                    },
+                  )),
             ],
           ),
 

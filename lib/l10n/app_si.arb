@@ -893,5 +893,17 @@
     "description":"ලබන මස කල් ඉකුත් වේ",
     "type": "text",
     "placeholders": {}
+  },
+  "contact_btn": "අපව අමතන්න",
+  "@contact_btn": {
+    "description":"අපව අමතන්න",
+    "type": "text",
+    "placeholders": {}
+  },
+  "profit": "ලාභය",
+  "@profit": {
+    "description":"ලාභය",
+    "type": "text",
+    "placeholders": {}
   }
 }

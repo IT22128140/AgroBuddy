@@ -23,12 +23,15 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
 
   //login method
-  void login () async {
+  void login() async {
     //show loading circle
     showDialog(
-      context: context, 
+      context: context,
       builder: (context) => const Center(
-        child: CircularProgressIndicator(),
+        child: CircularProgressIndicator(
+          valueColor:
+              AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 250, 230, 35)),
+        ),
       ),
     );
 
@@ -40,8 +43,7 @@ class _LoginPageState extends State<LoginPage> {
       );
 
       //pop the loading circle
-      if(context.mounted) Navigator.pop(context);
-  
+      if (context.mounted) Navigator.pop(context);
     }
 
     //display any errors
@@ -51,21 +53,22 @@ class _LoginPageState extends State<LoginPage> {
       displayMessageToUser(e.code, context);
     }
   }
-  
+
   //Forgot password method
-  void forgotPassword() async{
+  void forgotPassword() async {
     String email = emailController.text.trim();
 
-    if(email.isNotEmpty){
+    if (email.isNotEmpty) {
       try {
         await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
         //Display success message
-        displayMessageToUser(AppLocalizations.of(context)!.pw_reset_suc, context);
-      }on FirebaseAuthException catch (e) {
+        displayMessageToUser(
+            AppLocalizations.of(context)!.pw_reset_suc, context);
+      } on FirebaseAuthException catch (e) {
         //Display error message
         displayMessageToUser(e.code, context);
       }
-    }else{
+    } else {
       //Display error if email is empty
       displayMessageToUser(AppLocalizations.of(context)!.pw_reset_err, context);
     }
@@ -81,6 +84,11 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image.asset(
+                'lib/resources/images/logo2.png',
+                width: 200,
+              ),
+              SizedBox(height: 30),
               //sign in text
               Text(
                 AppLocalizations.of(context)!.login_name,
@@ -90,16 +98,16 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-          
+
               const SizedBox(height: 50),
-          
+
               //email textfield
               MyTextField(
                 hintText: AppLocalizations.of(context)!.email_input,
                 obscureText: false,
                 controller: emailController,
               ),
-          
+
               const SizedBox(height: 10),
 
               //password textfield
@@ -119,7 +127,8 @@ class _LoginPageState extends State<LoginPage> {
                     onTap: forgotPassword,
                     child: Text(
                       AppLocalizations.of(context)!.forgotpw_input,
-                      style: TextStyle(color: Color.fromARGB(255, 250, 230, 35)),
+                      style:
+                          TextStyle(color: Color.fromARGB(255, 250, 230, 35)),
                     ),
                   ),
                 ],
@@ -129,22 +138,20 @@ class _LoginPageState extends State<LoginPage> {
 
               //sign in button
               MyButton(
-                text: AppLocalizations.of(context)!.signin_btn, 
+                text: AppLocalizations.of(context)!.signin_btn,
                 onTap: login,
               ),
-          
+
               const SizedBox(height: 10),
 
               //Don't have an account? Sign Up
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    AppLocalizations.of(context)!.no_acc,
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 250, 230, 35),
-                    )
-                  ),
+                  Text(AppLocalizations.of(context)!.no_acc,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 250, 230, 35),
+                      )),
                   GestureDetector(
                     onTap: widget.onTap,
                     child: Text(
@@ -164,8 +171,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-
-
-
-

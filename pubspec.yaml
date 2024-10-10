@@ -26,6 +26,8 @@ dependencies:
   pretty_qr_code: ^3.3.0
   path_provider: ^2.0.9
   permission_handler: ^10.0.0
+  fl_chart: ^0.69.0
+  flutter_svg: ^2.0.10+1
   
 dev_dependencies:
   flutter_test:
@@ -43,3 +45,7 @@ flutter:
 
   assets:
     - lib\resources\images\logo.png
+    - lib\resources\icons\income.svg
+    - lib\resources\icons\expense.svg
+    - lib\resources\icons\profit.svg
+    - lib\resources\images\logo2.png

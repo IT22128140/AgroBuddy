@@ -405,8 +405,28 @@ class _RecordListState extends State<RecordList> {
                 children: [
                   MyButton(
                     text: AppLocalizations.of(context)!.show_ill,
-                    onTap: () {
-                      Navigator.pushNamed(context, 'show_charts');
+                    onTap: () async {
+                      final snapshot = await databaseService
+                          .getFilteredRecordsStream(
+                              timeRange: selectedTimeRange,
+                              selectedTime: selectedTime,
+                              uid: user.uid)
+                          .first;
+                      final docs = snapshot.docs;
+                      final totalIncome = calculateIncome(docs);
+                      final totalExpense = calculateExpense(docs);
+                      final total = calculateTotal(docs);
+
+                      // Navigate to ShowCharts with the calculated data
+                      Navigator.pushNamed(
+                        context,
+                        'show_charts',
+                        arguments: {
+                          'totalIncome': totalIncome,
+                          'totalExpense': totalExpense,
+                          'total': total,
+                        },
+                      );
                     },
                   ),
                 ],
@@ -489,7 +509,52 @@ class _RecordListState extends State<RecordList> {
                                         color: Colors.black, fontSize: 20),
                                   ),
                                   Text(
-                                    record.category,
+                                    (() {
+                                      switch (record.category) {
+                                        case 'seeds':
+                                          return AppLocalizations.of(context)!
+                                              .cate_seeds;
+                                        case 'fertilizer':
+                                          return AppLocalizations.of(context)!
+                                              .cate_fertilizer;
+                                        case 'pesticide':
+                                          return AppLocalizations.of(context)!
+                                              .cate_pesticide;
+                                        case 'animalfeed':
+                                          return AppLocalizations.of(context)!
+                                              .cate_animalfeed;
+                                        case 'vetdrugs':
+                                          return AppLocalizations.of(context)!
+                                              .cate_vetdrugs;
+                                        case 'labor':
+                                          return AppLocalizations.of(context)!
+                                              .cate_labor;
+                                        case 'machine':
+                                          return AppLocalizations.of(context)!
+                                              .cate_machine;
+                                        case 'remt':
+                                          return AppLocalizations.of(context)!
+                                              .cate_rent;
+                                        case 'capital':
+                                          return AppLocalizations.of(context)!
+                                              .cate_capital;
+                                        case 'harvest':
+                                          return AppLocalizations.of(context)!
+                                              .cate_harvest;
+                                        case 'eggs':
+                                          return AppLocalizations.of(context)!
+                                              .cate_eggs;
+                                        case 'milk':
+                                          return AppLocalizations.of(context)!
+                                              .cate_milk;
+                                        case 'meat':
+                                          return AppLocalizations.of(context)!
+                                              .cate_meat;
+                                        default:
+                                          return AppLocalizations.of(context)!
+                                              .cate_honey;
+                                      }
+                                    })(),
                                     style: const TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   ),
@@ -523,7 +588,7 @@ class _RecordListState extends State<RecordList> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
