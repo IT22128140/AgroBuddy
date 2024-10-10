@@ -21,7 +21,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   //register method
   Future<void> registerUser() async {
@@ -29,7 +30,10 @@ class _RegisterPageState extends State<RegisterPage> {
     showDialog(
       context: context,
       builder: (context) => const Center(
-        child: CircularProgressIndicator(),
+        child: CircularProgressIndicator(
+          valueColor:
+              AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 250, 230, 35)),
+        ),
       ),
     );
 
@@ -43,25 +47,25 @@ class _RegisterPageState extends State<RegisterPage> {
     }
 
     //if passwords do match
-    else{
+    else {
       //try creating the user
-    try {
-      //create the user
-      UserCredential? userCredential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
+      try {
+        //create the user
+        UserCredential? userCredential =
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text,
+          password: passwordController.text,
+        );
 
-      //pop loading circle
-      Navigator.pop(context);
-    } on FirebaseAuthException catch (e) {
-      //pop loading circle
-      Navigator.pop(context);
+        //pop loading circle
+        Navigator.pop(context);
+      } on FirebaseAuthException catch (e) {
+        //pop loading circle
+        Navigator.pop(context);
 
-      //display the error message to the user
-      displayMessageToUser(e.code, context);
-    }
+        //display the error message to the user
+        displayMessageToUser(e.code, context);
+      }
     }
   }
 
@@ -76,6 +80,12 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(height: 50),
+                Image.asset(
+                  'lib/resources/images/logo2.png',
+                  width: 200,
+                ),
+                SizedBox(height: 30),
                 //sign up text
                 Text(
                   AppLocalizations.of(context)!.signup_text,
@@ -85,53 +95,53 @@ class _RegisterPageState extends State<RegisterPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-        
+
                 const SizedBox(height: 50),
-        
+
                 //username textfield
                 MyTextField(
                   hintText: AppLocalizations.of(context)!.username_input,
                   obscureText: false,
                   controller: usernameController,
                 ),
-        
+
                 const SizedBox(height: 10),
-        
+
                 //email textfield
                 MyTextField(
                   hintText: AppLocalizations.of(context)!.email_input,
                   obscureText: false,
                   controller: emailController,
                 ),
-        
+
                 const SizedBox(height: 10),
-        
+
                 //password textfield
                 MyTextField(
                   hintText: AppLocalizations.of(context)!.pw_input,
                   obscureText: true,
                   controller: passwordController,
                 ),
-        
+
                 const SizedBox(height: 10),
-        
+
                 //confirmpassword textfield
                 MyTextField(
                   hintText: AppLocalizations.of(context)!.conpw_input,
                   obscureText: true,
                   controller: confirmPasswordController,
                 ),
-        
+
                 const SizedBox(height: 30),
-        
+
                 //sign up button
                 MyButton(
                   text: AppLocalizations.of(context)!.signup_btn,
                   onTap: registerUser,
                 ),
-        
+
                 const SizedBox(height: 10),
-        
+
                 //Already have an account? Sign In
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -142,7 +142,19 @@ class RecordView extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      record.accountType,
+                                      (() {
+                                        switch (record.accountType) {
+                                          case 'cash':
+                                            return AppLocalizations.of(context)!
+                                                .acc_t_cash;
+                                          case 'bank':
+                                            return AppLocalizations.of(context)!
+                                                .acc_t_bank;
+                                          default:
+                                            return AppLocalizations.of(context)!
+                                                .acc_t_loan;
+                                        }
+                                      })(),
                                       style: const TextStyle(
                                         fontSize: 20,
                                         color: Colors.black,
@@ -162,7 +174,52 @@ class RecordView extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      record.category,
+                                      (() {
+                                        switch (record.category) {
+                                          case 'seeds':
+                                            return AppLocalizations.of(context)!
+                                                .cate_seeds;
+                                          case 'fertilizer':
+                                            return AppLocalizations.of(context)!
+                                                .cate_fertilizer;
+                                          case 'pesticide':
+                                            return AppLocalizations.of(context)!
+                                                .cate_pesticide;
+                                          case 'animalfeed':
+                                            return AppLocalizations.of(context)!
+                                                .cate_animalfeed;
+                                          case 'vetdrugs':
+                                            return AppLocalizations.of(context)!
+                                                .cate_vetdrugs;
+                                          case 'labor':
+                                            return AppLocalizations.of(context)!
+                                                .cate_labor;
+                                          case 'machine':
+                                            return AppLocalizations.of(context)!
+                                                .cate_machine;
+                                          case 'remt':
+                                            return AppLocalizations.of(context)!
+                                                .cate_rent;
+                                          case 'capital':
+                                            return AppLocalizations.of(context)!
+                                                .cate_capital;
+                                          case 'harvest':
+                                            return AppLocalizations.of(context)!
+                                                .cate_harvest;
+                                          case 'eggs':
+                                            return AppLocalizations.of(context)!
+                                                .cate_eggs;
+                                          case 'milk':
+                                            return AppLocalizations.of(context)!
+                                                .cate_milk;
+                                          case 'meat':
+                                            return AppLocalizations.of(context)!
+                                                .cate_meat;
+                                          default:
+                                            return AppLocalizations.of(context)!
+                                                .cate_honey;
+                                        }
+                                      })(),
                                       style: const TextStyle(
                                         fontSize: 20,
                                         color: Colors.black,

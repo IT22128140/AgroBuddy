@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:agro_buddy/models/record.dart';
 import 'package:agro_buddy/services/database_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart';
 
 class RecordAddExpense extends StatefulWidget {
   const RecordAddExpense({super.key});
@@ -98,16 +99,23 @@ class _RecordAddExpenseState extends State<RecordAddExpense> {
                                   color: Color.fromARGB(255, 250, 230, 35),
                                 ),
                               ),
-                              items: <String>[
-                                AppLocalizations.of(context)!.acc_t_cash,
-                                AppLocalizations.of(context)!.acc_t_bank,
-                                AppLocalizations.of(context)!.acc_t_loan,
-                              ].map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
+                              items: [
+                                DropdownMenuItem(
+                                  value: 'cash',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_cash),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'bank',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_bank),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'loan',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.acc_t_loan),
+                                ),
+                              ],
                               onChanged: (String? newvalue) {
                                 setState(() {
                                   accountController.text = newvalue!;
@@ -134,21 +142,48 @@ class _RecordAddExpenseState extends State<RecordAddExpense> {
                                   color: Color.fromARGB(255, 250, 230, 35),
                                 ),
                               ),
-                              items: <String>[
-                                AppLocalizations.of(context)!.cate_seeds,
-                                AppLocalizations.of(context)!.cate_fertilizer,
-                                AppLocalizations.of(context)!.cate_pesticide,
-                                AppLocalizations.of(context)!.cate_animalfeed,
-                                AppLocalizations.of(context)!.cate_vetdrugs,
-                                AppLocalizations.of(context)!.cate_labor,
-                                AppLocalizations.of(context)!.cate_machine,
-                                AppLocalizations.of(context)!.cate_rent,
-                              ].map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
+                              items: [
+                                DropdownMenuItem(
+                                  value: 'seeds',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.cate_seeds),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'fertilizer',
+                                  child: Text(AppLocalizations.of(context)!
+                                      .cate_fertilizer),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'pesticide',
+                                  child: Text(AppLocalizations.of(context)!
+                                      .cate_pesticide),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'animalfeed',
+                                  child: Text(AppLocalizations.of(context)!
+                                      .cate_animalfeed),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'vetdrugs',
+                                  child: Text(AppLocalizations.of(context)!
+                                      .cate_vetdrugs),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'labor',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.cate_labor),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'machine',
+                                  child: Text(AppLocalizations.of(context)!
+                                      .cate_machine),
+                                ),
+                                DropdownMenuItem(
+                                  value: 'rent',
+                                  child: Text(
+                                      AppLocalizations.of(context)!.cate_rent),
+                                ),
+                              ],
                               onChanged: (String? newvalue) {
                                 setState(() {
                                   categoryController.text = newvalue!;
@@ -265,9 +300,19 @@ class _RecordAddExpenseState extends State<RecordAddExpense> {
                                 },
                               );
                               if (pickedTime != null) {
+                                // Convert the pickedTime to 24-hour format
+                                final now = DateTime.now();
+                                final dt = DateTime(
+                                    now.year,
+                                    now.month,
+                                    now.day,
+                                    pickedTime.hour,
+                                    pickedTime.minute);
+                                final formattedTime = DateFormat.Hm()
+                                    .format(dt); // 24-hour format
+
                                 setState(() {
-                                  timeController.text =
-                                      pickedTime.format(context);
+                                  timeController.text = formattedTime;
                                 });
                               }
                             },

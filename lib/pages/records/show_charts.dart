@@ -20,80 +20,81 @@ class ShowCharts extends StatefulWidget {
 }
 
 class _ShowChartsState extends State<ShowCharts> {
-  int touchedIndex = 0;
+  int touchedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 44, 99, 31),
-        body: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 300, // Set a specific height for the PieChart
-                child: PieChart(
-                  PieChartData(
-                    pieTouchData: PieTouchData(
-                      touchCallback: (FlTouchEvent event, pieTouchResponse) {
-                        setState(() {
-                          if (!event.isInterestedForInteractions ||
-                              pieTouchResponse == null ||
-                              pieTouchResponse.touchedSection == null) {
-                            touchedIndex = -1;
-                            return;
-                          }
-                          touchedIndex =
-                              pieTouchResponse.touchedSection!.touchedSectionIndex;
-                        });
-                      },
-                    ),
-                    borderData: FlBorderData(show: false),
-                    sectionsSpace: 0,
-                    centerSpaceRadius: 0,
-                    sections: showingSections(),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 300, // Set a specific height for the PieChart
+              child: PieChart(
+                PieChartData(
+                  pieTouchData: PieTouchData(
+                    touchCallback: (FlTouchEvent event, pieTouchResponse) {
+                      setState(() {
+                        if (!event.isInterestedForInteractions ||
+                            pieTouchResponse == null ||
+                            pieTouchResponse.touchedSection == null) {
+                          touchedIndex = -1;
+                          return;
+                        }
+                        touchedIndex = pieTouchResponse
+                            .touchedSection!.touchedSectionIndex;
+                      });
+                    },
                   ),
+                  borderData: FlBorderData(show: false),
+                  sectionsSpace: 0,
+                  centerSpaceRadius: 0,
+                  sections: showingSections(),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 50, left: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Indicator(
-                      color: Colors.yellow,
-                      text: AppLocalizations.of(context)!.income,
-                      isSquare: true,
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Indicator(
-                      color: Colors.red,
-                      text: AppLocalizations.of(context)!.expense,
-                      isSquare: true,
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Indicator(
-                      color: Colors.blue,
-                      text: AppLocalizations.of(context)!.profit,
-                      isSquare: true,
-                    ),
-                    SizedBox(
-                      height: 18,
-                    ),
-                  ],
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 50, left: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Indicator(
+                    color: Colors.yellow,
+                    text: AppLocalizations.of(context)!.income,
+                    isSquare: true,
+                  ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Indicator(
+                    color: Colors.red,
+                    text: AppLocalizations.of(context)!.expense,
+                    isSquare: true,
+                  ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Indicator(
+                    color: Colors.blue,
+                    text: AppLocalizations.of(context)!.profit,
+                    isSquare: true,
+                  ),
+                  SizedBox(
+                    height: 18,
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
+      ),
     );
   }
 
+//pie chart
   List<PieChartSectionData> showingSections() {
     return List.generate(3, (i) {
       final isTouched = i == touchedIndex;
@@ -107,7 +108,7 @@ class _ShowChartsState extends State<ShowCharts> {
           return PieChartSectionData(
             color: Colors.yellow,
             value: widget.totalIncome,
-            title: '\Rs.${widget.totalIncome}',
+            title: 'Rs.${widget.totalIncome}',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -125,7 +126,7 @@ class _ShowChartsState extends State<ShowCharts> {
           return PieChartSectionData(
             color: Colors.red,
             value: widget.totalExpense,
-            title: '\Rs.${widget.totalExpense}',
+            title: 'Rs.${widget.totalExpense}',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
@@ -144,7 +145,7 @@ class _ShowChartsState extends State<ShowCharts> {
           return PieChartSectionData(
             color: Colors.blue,
             value: widget.total,
-            title: '\Rs.${widget.total}',
+            title: 'Rs.${widget.total}',
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -181,6 +182,7 @@ class Indicator extends StatelessWidget {
     this.textColor = Colors.white,
   });
 
+//legend
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -219,6 +221,7 @@ class _Badge extends StatelessWidget {
   final double size;
   final Color borderColor;
 
+//images
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
