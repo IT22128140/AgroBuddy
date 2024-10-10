@@ -30,11 +30,10 @@ class _StockListState extends State<StockList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 40, 99, 31),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            FutureBuilder<List<Stock>>(
+      body: Column(
+        children: [
+          Expanded(
+            child: FutureBuilder<List<Stock>>(
               future: _stockListFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -54,7 +53,6 @@ class _StockListState extends State<StockList> {
                           color: Color.fromARGB(255, 250, 230, 35),
                           fontSize: 30));
                 }
-
                 // If data is available, display it
                 List<Stock> stockList = snapshot.data!;
                 return SingleChildScrollView(
@@ -191,17 +189,18 @@ class _StockListState extends State<StockList> {
                 );
               },
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20, left: 130, right: 130),
-              child: MyButton(
-                text: AppLocalizations.of(context)!.add,
-                onTap: () {
-                  Navigator.of(context).pushNamed('stock_add');
-                },
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+                bottom: 20, top: 20, left: 110, right: 110),
+            child: MyButton(
+              text: AppLocalizations.of(context)!.add,
+              onTap: () {
+                Navigator.of(context).pushNamed('stock_add');
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
