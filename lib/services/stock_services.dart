@@ -105,12 +105,22 @@ Future<List<Stock>> getStocksExpiringThisWeek(String uid) async {
 Future<List<Stock>> getStocksExpiringNextMonth(String uid) async {
   try {
     final now = DateTime.now();
-    final firstDayNextMonth = startOfDay(DateTime(now.year, now.month + 1, 1));
-    final lastDayNextMonth = endOfDay(DateTime(now.year, now.month + 2, 0)); // Last day of next month
+    // If it's December, handle year increment
+    final firstDayNextMonth = startOfDay(DateTime(
+      now.year + (now.month == 12 ? 1 : 0), 
+      now.month == 12 ? 1 : now.month + 1, 
+      1
+    ));
+
+    final lastDayNextMonth = endOfDay(DateTime(
+      now.year + (now.month == 12 ? 1 : 0), 
+      now.month == 12 ? 1 : now.month + 2, 
+      0 // The last day of the next month
+    ));
 
     QuerySnapshot querySnapshot = await _db
         .collection('Stock')
-        .where(uid, isEqualTo: uid)
+        .where('uid', isEqualTo: uid) // Fixed this to be 'uid' instead of passing the value of `uid` directly as a field
         .where('expDate', isGreaterThanOrEqualTo: Timestamp.fromDate(firstDayNextMonth))
         .where('expDate', isLessThanOrEqualTo: Timestamp.fromDate(lastDayNextMonth))
         .get();
@@ -123,5 +133,6 @@ Future<List<Stock>> getStocksExpiringNextMonth(String uid) async {
     return [];
   }
 }
+
 
 }
